@@ -66,7 +66,16 @@ CREATE TABLE Contatto(Recapito)
 CREATE TABLE Cliente(Codice, RagioneSociale, PartitaIVA)
 CREATE TABLE RubricaC(Contatto, Cliente)
 CREATE TABLE Stipulazione(Cliente, Documento)
-CREATE TABLE Documento(Numero, DatiPagamento, Data, Importo,
-TipoDocumento)
-CREATE TABLE MacchinaInLavorazione(matricola, Codice)
-CREATE TABLE Composizione(Matricola,Codice, Quantità)
+CREATE TABLE Documento(
+    Numero INTEGER,
+    DatiPagamento VARCHAR(30),
+    Data DATE,
+    Importo INTEGER,
+    TipoDocumento VARCHAR(10)
+CREATE TABLE MacchinaInLavorazione
+    (matricola INTEGER PRIMARY KEY ,
+    Codice VARCHAR(8));
+
+CREATE TABLE Composizione(Matricola INTEGER PRIMARY KEY ,
+Codice VARCHAR(8),
+Quantità INTEGER);
