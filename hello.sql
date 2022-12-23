@@ -1,1 +1,2 @@
-benvenuti a tutti
+SHOW DATABASES;
+CREATE DATABASE Messersì;
