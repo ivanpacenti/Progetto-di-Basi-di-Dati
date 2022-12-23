@@ -1,1 +1,2 @@
-benvenuti a tutti
+CREATE DATABASE Messersi;
+USE Messersi;
