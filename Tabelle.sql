@@ -31,15 +31,36 @@ Ciclo VARCHAR(20));
 CREATE TABLE Ciclo(
 Tipologia VARCHAR(20));
 CREATE TABLE Registrazione(
-Articolo, Fornitore, Documento, Quantità)
-CREATE TABLE Fabbricazione(Articolo, Quantità, Commessa)
-CREATE TABLE Commessa(CodiceCommessa, DataInizio, DataFine,
-CodiceArticolo, Matricola)
+Articolo ,
+Fornitore ,
+Documento,
+Quantità);
+CREATE TABLE Fabbricazione(
+Articolo,
+Quantità,
+Commessa);
+CREATE TABLE Commessa(
+CodiceCommessa integer,
+DataInizio date,
+DataFine DATE,
+CodiceArticolo VARCHAR(8),
+Matricola INTEGER);
 CREATE TABLE Impegno(Ordine, Commessa)
-CREATE TABLE Ordine(Numero, Data, Importo, Codice, Quantità)
+CREATE TABLE Ordine(
+Numero INTEGER,
+Data DATE,
+Importo INTEGER,
+Codice INTEGER,
+Quantità INTEGER)
 CREATE TABLE Richiesta(Cliente, Ordine)
-CREATE TABLE Indirizzo(Via, Civico, Comune)
-CREATE TABLE Fornitore(Codice, RagioneSociale, PartitaIVA)
+CREATE TABLE Indirizzo(
+Via VARCHAR(15),
+Civico INTEGER,
+Comune VARCHAR(2));
+CREATE TABLE Fornitore(
+Codice INTEGER,
+RagioneSociale VARCHAR(20),
+PartitaIVA VARCHAR(11));
 CREATE TABLE RubricaF(Fornitore, Contatto)
 CREATE TABLE Contatto(Recapito)
 CREATE TABLE Cliente(Codice, RagioneSociale, PartitaIVA)
