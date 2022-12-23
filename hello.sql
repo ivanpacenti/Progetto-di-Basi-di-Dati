@@ -1,2 +1,2 @@
-CREATE DATABASE Messersi;
-USE Messersi;
+SHOW DATABASES;
+CREATE DATABASE Messersì;
