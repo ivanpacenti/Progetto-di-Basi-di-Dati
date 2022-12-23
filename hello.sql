@@ -1,3 +1,3 @@
 CREATE DATABASE Messersi;
 USE Messersi;
-prova prova
+CREATE TABLE Articolo (codice varchar(8));
