@@ -1,15 +1,15 @@
 CREATE TABLE Locazione(
     CodiceScaffale VARCHAR(8) PRIMARY KEY,
-    PesoOccupato INTEGER,
-    Sezione CHAR(1),
-    Scaffalatura CHAR(1),
-    RigaScaff INTEGER,
-    ColonnaScaff INTEGER);
+    PesoOccupato INTEGER NOT NULL,
+    Sezione CHAR(1) NOT NULL,
+    Scaffalatura CHAR(1) NOT NULL,
+    RigaScaff INTEGER NOT NULL,
+    ColonnaScaff INTEGER NOT NULL);
 
 CREATE TABLE Ubicazione(
     Locazione VARCHAR(2) NOT NULL REFERENCES Locazione(CodiceScaffale),
     Articolo VARCHAR(8)  NOT NULL REFERENCES Articolo(Codice),
-    Quantita INTEGER NOT NULL );
+    Quantita INTEGER NOT NULL);
 
 CREATE TABLE Articolo(
     Codice VARCHAR(8) PRIMARY KEY,
