@@ -1,5 +1,5 @@
 CREATE TABLE Locazione(
-    CodiceScaffale VARCHAR(8) PRIMARY KEY ,
+    CodiceScaffale VARCHAR(8) PRIMARY KEY,
     PesoOccupato INTEGER,
     Sezione CHAR(1),
     Scaffalatura CHAR(1),
