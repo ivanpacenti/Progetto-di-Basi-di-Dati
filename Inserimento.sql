@@ -11,3 +11,9 @@ INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezz
 VALUES ('09681212','SOTTOCARRO CINGOLATO CH2N13','10','1200','3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
+
+INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','0','A','a','1','2');
+
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('2','55141612','20');
