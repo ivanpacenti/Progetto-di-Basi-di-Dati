@@ -1,3 +1,4 @@
+USE messersi;
 USE Messersi;
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('55141618','TELAIO SOTTOCARRO CH2R','10','1200','3','1','6','120');
