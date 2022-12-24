@@ -12,22 +12,22 @@ CREATE TABLE Ubicazione(
     Quantita INTEGER NOT NULL );
 
 CREATE TABLE Articolo(
-    Codice VARCHAR(8) PRIMARY KEY ,
-    Descrizione VARCHAR(50) NOT NULL ,
-    Quantità INTEGER NOT NULL ,
-    Prezzo INTEGER ,
-    Altezza INTEGER NOT NULL ,
-    Larghezza INTEGER NOT NULL ,
-    Profondità INTEGER NOT NULL ,
-    Massa INTEGER NOT NULL );
+    Codice VARCHAR(8) PRIMARY KEY,
+    Descrizione VARCHAR(50) NOT NULL,
+    Quantità INTEGER NOT NULL,
+    Prezzo INTEGER,
+    Altezza INTEGER NOT NULL,
+    Larghezza INTEGER NOT NULL,
+    Profondità INTEGER NOT NULL,
+    Massa INTEGER NOT NULL);
 
 CREATE TABLE DettaglioDistinta(
     Distinta VARCHAR(8) NOT NULL REFERENCES  Distinta(ArticoloDiRiferimento),
-    Quantità INTEGER NOT NULL ,
+    Quantità INTEGER NOT NULL,
     Articolo VARCHAR (8) NOT NULL REFERENCES Articolo(Codice));
 
 CREATE TABLE Distinta(
-    NumeroArticoli INTEGER NOT NULL ,
+    NumeroArticoli INTEGER NOT NULL,
     ArticoloDiRiferimento VARCHAR(8) NOT NULL PRIMARY KEY );
 
 CREATE TABLE DettaglioCicli(
@@ -48,7 +48,7 @@ CREATE TABLE Fabbricazione(
     Commessa INTEGER NOT NULL REFERENCES MacchinaInLavorazione(Matricola));
 
 CREATE TABLE Commessa(
-    CodiceCommessa INTEGER PRIMARY KEY ,
+    CodiceCommessa INTEGER PRIMARY KEY,
     DataInizio DATE NOT NULL,
     DataFine DATE NOT NULL );
 
