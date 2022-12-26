@@ -66,14 +66,16 @@ CREATE TABLE Fornitore(
     PartitaIVA VARCHAR(11) NOT NULL,
     PRIMARY KEY (Codice,PartitaIVA));
 
+CREATE TABLE Contatto(
+    Recapito VARCHAR(30) PRIMARY KEY);
+
 CREATE TABLE RubricaF(
     Fornitore INTEGER NOT NULL,
     FOREIGN KEY (Fornitore)  REFERENCES fornitore(Codice),
     Contatto VARCHAR(30) NOT NULL,
     FOREIGN KEY (Contatto) REFERENCES Contatto(Recapito));
 
-CREATE TABLE Contatto(
-    Recapito VARCHAR(30) PRIMARY KEY);
+
 
 CREATE TABLE Cliente(
     Codice INTEGER AUTO_INCREMENT,
@@ -87,18 +89,20 @@ CREATE TABLE RubricaC(
     Contatto VARCHAR(30) NOT NULL,
     FOREIGN KEY (Contatto) REFERENCES Contatto(Recapito));
 
-CREATE TABLE Stipulazione(
-    Cliente INTEGER NOT NULL,
-    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
-    Documento INTEGER NOT NULL,
-    FOREIGN KEY (Cliente) REFERENCES Documento(Numero));
-
 CREATE TABLE Documento(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
     DatiPagamento VARCHAR(30) NOT NULL,
     DataDocumento DATE NOT NULL,
     Importo INTEGER NOT NULL,
     TipoDocumento VARCHAR(10) NOT NULL);
+
+CREATE TABLE Stipulazione(
+    Cliente INTEGER NOT NULL,
+    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
+    Documento INTEGER NOT NULL,
+    FOREIGN KEY (Cliente) REFERENCES Documento(Numero));
+
+
 
 CREATE TABLE MacchinaInLavorazione(
     Matricola INTEGER PRIMARY KEY AUTO_INCREMENT,
