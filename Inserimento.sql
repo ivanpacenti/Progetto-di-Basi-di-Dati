@@ -172,7 +172,6 @@ INSERT INTO cliente(RagioneSociale, PartitaIVA)
 INSERT INTO cliente(RagioneSociale, PartitaIVA)
         VALUE ('FILI.IT','86285140257');
 
-
 /* INSERIMENTO MACCHINA IN LAVORAZIONE*/
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09681212');
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09576488');
@@ -191,9 +190,20 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
 INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
     VALUES ('2022-10-18',50000,'09508080',2);
 
+/*INSERIMENTO ORDINE */
+INSERT INTO commessa(codicecommessa, datainizio, datafine) VALUES ()
+
+/* DOCUMENTO*/
+INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
+    VALUE('IT32X0300203280863596584462','2022-07-25',13000,'Fattura');
+INSERT INTO documento(DatiPagamento,DataDocumento, TipoDocumento)
+    VALUE('2022-07-25','DDT');
+
+
 /*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('5','55141618','20');
 
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('2','09681212','20');
+
