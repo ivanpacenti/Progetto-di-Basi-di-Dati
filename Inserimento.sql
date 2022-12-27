@@ -12,35 +12,48 @@ VALUES ('09681212','SOTTOCARRO CINGOLATO CH2N13','10','1200','3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
 
+/* INSERIMENTO POSTI LOCAZIONE */
 
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','0','A','a','1','1');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('2','0','A','a','1','2');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('3','0','A','a','1','3');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('4','0','A','a','1','4');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('5','0','A','a','1','5');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('6','0','A','1','2','2');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('7','0','A','b','2','3');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('8','0','A','a','2','4');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('9','0','A','a','2','5');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('10','0','A','a','3','1');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('11','0','A','a','3','2');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('12','0','A','a','3','3');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('13','0','A','a','3','4');
-INSERT INTO Locazione( CodiceScaffale,PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('14','0','A','a','3','5');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','1','1');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','1','2');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','1','3');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','1','4');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','1','5');
+INSERT INTO Locazione( PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','2','2');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','2','3');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','2','4');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','2','5');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','3','1');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','3','2');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','3','3');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','3','4');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','3','5');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','4','1');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','4','2');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','4','3');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','4','3');
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','A','a','4','5');
+
+
 
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('5','55141618','20');
