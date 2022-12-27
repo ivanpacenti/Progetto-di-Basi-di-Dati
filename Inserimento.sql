@@ -70,6 +70,7 @@ INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaSca
 VALUES ('0','A','a','4','5') ;
 
 
+
 /*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('5','55141618','20');
