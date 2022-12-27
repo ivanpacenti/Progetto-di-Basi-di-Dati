@@ -1,17 +1,7 @@
 USE Messersi;
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('55141618','TELAIO SOTTOCARRO CH2R','10','1200','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('55030790','TELAIO POSTO GUIDA','15','350','1.5','1.5','1','20');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('55030450','TELAIO POSTO GUIDA CH2R','10','1200','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('55181768','TELAIO SOTTOCARRO CH2R','10','1200','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
-VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
 
+
+/*INSERIMENTO MACCHINE COMPLETE*/
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('09681212','MINI-DUMPER TC85d','10','13000','0.5','0.6','1','850');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
@@ -24,6 +14,29 @@ INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezz
 VALUES ('09203999','CTL 45','10','28000','1','1.3','1','2700');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('09508080','ROBOKLIN 25','10','25000','2.5','2','3','4200');
+
+/*INSERIMENTO COMPONETI MACCHINA*/
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55141618','TELAIO SOTTOCARRO CH2R','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55030790','TELAIO POSTO GUIDA','15','350','1.5','1.5','1','20');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55030450','TELAIO POSTO GUIDA CH2R','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55181768','TELAIO SOTTOCARRO CH2R','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('30152800','CARTER PROTEZIONE PULEGGIE','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('30156001','CARTER PROTEZIONE MOTORE','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55089090','TELAIO BRACCI','10','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('30405560','BASE MOTORE','10','1200','3','1','6','120');
+
 
 /*INSERIMENTO POSTI LOCAZIONE */
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
