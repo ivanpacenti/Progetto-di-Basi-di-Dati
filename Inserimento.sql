@@ -13,7 +13,8 @@ INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezz
 VALUES ('45157898','BENNA TC550D','10','1200','3','1','6','120');
 
 /* INSERIMENTO POSTI LOCAZIONE */
-
+INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
+VALUES ('0','C','0','0','0');
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES ('0','A','a','1','1');
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
