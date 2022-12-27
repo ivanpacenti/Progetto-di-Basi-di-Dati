@@ -177,7 +177,19 @@ INSERT INTO cliente(RagioneSociale, PartitaIVA)
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09681212');
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09576488');
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09680200');
+/* INSERIMENTO 2 MACCHINE IDENTICHE */
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09508080');
+INSERT INTO macchinainlavorazione(Codice) VALUES ('09508080');
+
+/*INSERIMENTO ORDINE */
+INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
+    VALUES ('2022-06-30',13000,'09681212',1);
+INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
+    VALUES ('2022-08-22',15000,'09576488',1);
+INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
+    VALUES ('2022-09-25',18000,'09680200',1);
+INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
+    VALUES ('2022-10-18',50000,'09508080',2);
 
 /*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
