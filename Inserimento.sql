@@ -70,25 +70,9 @@ INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaSca
 VALUES ('0','A','a','4','5') ;
 
 
-/INSERIMENTO UBICAZIONI/
+/*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('5','55141618','20');
 
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('2','09681212','20');
-
-/INSERIMENTO DISTINTE/
-
-/INSERIMENTO CLIENTI/
-
-/INSERIMENTO FORNITORI/
-
-/INSERIMENTO MACCHINE IN LAVORAZIONE/
-
-/INSERIMENTO ORDINE/
-
-/INSERIMENTO DOCUMENTO/
-
-/INSERIMENTO ddt/
-
-/INSERIMENTO fatture/
