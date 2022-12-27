@@ -23,6 +23,8 @@ VALUES ('55030790','TELAIO POSTO GUIDA CTL45','15','350','1.5','1.5','1','20');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('55030450','TELAIO POSTO GUIDA M18DS','10','1200','3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+VALUES ('55030460','TELAIO POSTO GUIDA M38U','20','1200','3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('55181768','TELAIO SOTTOCARRO CTL45','10','1200','3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('45157808','BENNA CTL45','10','1200','3','1','6','120');
@@ -64,6 +66,13 @@ INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
 VALUES ('09782020','1','55030450');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
 VALUES ('09782020','1','30156001');
+/*distinta MINI-ESCAVATORE M38U*/
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('2','09680200');
+INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
+VALUES ('09680200','1','55030460');
+INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
+VALUES ('09680200','2','55089090');
 /*distinta MINI-DUMPER TC50-e*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
 VALUES ('2','09576488');
