@@ -49,7 +49,7 @@ VALUES ('0','A','a','4','2');
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES ('0','A','a','4','3');
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','3');
+VALUES ('0','A','a','4','4');
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES ('0','A','a','4','5');
 
