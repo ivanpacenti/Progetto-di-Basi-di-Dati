@@ -39,6 +39,12 @@ INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezz
 VALUES ('30405560','BASE MOTORE','10',NULL,'3','1','6','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','10',NULL,'3','1','6','120');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
+VALUES ('04543000','RONDELLE','20',NULL,'5','10','6','0.01');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
+VALUES ('04369000','VITE LUNGA','18',NULL,'10','10','8','0.05');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
+VALUES ('04126300','VITE CORTA','50',NULL,'5','8','5','0.03');
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
@@ -294,3 +300,22 @@ INSERT INTO commessa( datainizio, datafine)
 
 INSERT INTO commessa( datainizio, datafine)
     VALUES ('2022-11-15','2022-11-30');
+
+/*inserita stipulazione*/
+
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (1,1);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (2,3);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (3,5);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (4,7);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (1,2);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (2,4);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (3,6);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (4,8);
