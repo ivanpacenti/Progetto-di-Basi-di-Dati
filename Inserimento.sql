@@ -280,13 +280,13 @@ VALUES ('10','04126300','20');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('11','04126300','50');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('12','04427000','20');
+VALUES ('12','04427000','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('13','04427000','20');
+VALUES ('13','04427000','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('14','04427000','20');
+VALUES ('14','04427000','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('15','04427000','20');
+VALUES ('15','04427000','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('16','05990020','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
