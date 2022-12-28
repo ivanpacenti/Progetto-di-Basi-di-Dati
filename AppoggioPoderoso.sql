@@ -91,3 +91,84 @@ INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
 
 INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
     VALUES(5, '30405560', 1);
+
+/* INSERIMENTO FABBRICAZIONE */
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(1, 1);
+
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(2, 2);
+
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(3, 3);
+
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(4, 4);
+
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(5, 4);
+
+/* INSERIMENTO FORNITORE INTERNO MESSERSI */
+INSERT INTO Fornitore(RagioneSociale, PartitaIVA)
+    VALUES('MESSERSÌ', '00000000000');
+
+/* INSERIMENTO REGISTRAZIONE */
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990010', 11, 1, 5);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 1, 15);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990010', 11, 2, 5);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 2, 15);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('30405560', 11, 3, 1);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('55089090', 11, 3, 1);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990030', 5, 3, 14);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('45157808', 4, 3, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('30405560', 11, 4, 1);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('55089090', 11, 4, 1);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990030', 5, 4, 14);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('45157808', 4, 4, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('55141618', 11, 5, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('55141618', 11, 6, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('30405560', 7, 7, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990020', 8, 7, 3);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 7, 3);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('30405560', 7, 8, 2);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990020', 8, 8, 3);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 8, 3);
