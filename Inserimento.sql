@@ -58,6 +58,22 @@ VALUES ('05990040','TONDO TRAFILATO','10','450','20','40','40','20');
 
 /*INSERIMENTO DISTINTE ARTICOLI*/
 
+/*distinta materie prime*/
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','06990000');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','06990002');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','06990003');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','05990010');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','05990020');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','05990030');
+INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
+VALUES ('0','05990040');
+
 /*distinta roboklin 25*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
 VALUES ('2','09508080');
