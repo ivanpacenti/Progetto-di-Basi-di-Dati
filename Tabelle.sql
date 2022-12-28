@@ -14,7 +14,7 @@ CREATE TABLE Articolo(
     Altezza INTEGER NOT NULL,
     Larghezza INTEGER NOT NULL,
     Profondità INTEGER NOT NULL,
-    Massa INTEGER NOT NULL);
+    Peso INTEGER NOT NULL);
 
 CREATE TABLE Ubicazione(
     Locazione INTEGER NOT NULL ,

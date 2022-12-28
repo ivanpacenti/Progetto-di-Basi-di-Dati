@@ -1,58 +1,58 @@
 USE Messersi;
 
 /*INSERIMENTO MACCHINE COMPLETE*/
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09681212','MINI-DUMPER TC85d','10','13000','0.5','0.6','1','850');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09576488','MINI-DUMPER TC50-e','10','15000','0.5','0.6','1','500');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09680200','MINI-ESCAVATORE M38U','10','18000','1.3','1.3','0.8','3600');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09782020','MINI-ESCAVATORE M18DS','10','17000','1.3','1.3','0.8','1850');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09203999','CTL 45','10','28000','1','1.3','1','2700');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09508080','ROBOKLIN 25','10','25000','2.5','2','3','4200');
 
 /*INSERIMENTO COMPONETI MACCHINA*/
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55141618','TELAIO SOTTOCARRO ROBOKLIN','10','1200','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55030790','TELAIO POSTO GUIDA CTL45','15','350','1.5','1.5','1','100');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55030450','TELAIO POSTO GUIDA M18DS','10','400','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55030460','TELAIO POSTO GUIDA M38U','20','400','3','1','6','120');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55181768','TELAIO SOTTOCARRO CTL45','10','1000','3','1','6','400');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('45157808','BENNA CTL45','10','800','3','1','6','400');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('45150898','TELAIO SOLLEVAMENTO BRACCI PALA','10','800','3','1','6','500');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30152800','CARTER PROTEZIONE PULEGGIE','10','300','3','1','6','50');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30156001','CARTER PROTEZIONE MOTORE','10','1200','3','1','6','50');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55089090','TELAIO BRACCI','10','2000','3','1','6','400');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30405560','BASE MOTORE','10','1200','3','1','6','500');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','10','600','3','1','6','120');
 /*INSERIMENTO MATERIE PRIME */
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10','300','50','1000','50','30');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990002','TUBO QUADRO','10','250','55','900','50','20');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990003','TUBO QUADRO','10','350','55','1050','55','40');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990010','TONDO TRAFILATO','10','200','10','10','10','10');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990020','TONDO TRAFILATO','10','300','13','13','14','10');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990030','TONDO TRAFILATO','10','400','15.5','15.5','10','15.5');
-INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990040','TONDO TRAFILATO','10','450','20','40','40','20');
 
 
