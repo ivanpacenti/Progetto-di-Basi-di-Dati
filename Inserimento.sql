@@ -1,5 +1,3 @@
-USE Messersi;
-
 /*INSERIMENTO MACCHINE COMPLETE*/
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09681212','MINI-DUMPER TC85d','10','13000','0.5','0.6','1','850');
@@ -46,7 +44,7 @@ VALUES ('04369000','VITE LUNGA','18',NULL,'10','10','8','0.05');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04126300','VITE CORTA','50',NULL,'5','8','5','0.03');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04427000','ASTA PIOBMO','12',NULL,'200','500','100','12');
+VALUES ('04427000','ASTA PIOMBO','12',NULL,'200','500','100','2');
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
@@ -260,10 +258,48 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
 
 /*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('5','55141618','20');
-
+VALUES ('1','04543000','1000');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('2','09681212','20');
+VALUES ('2','04543000','1000');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('3','04543000','100');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('4','04543000','100');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('5','04369000','100');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('6','04369000','100');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('7','04369000','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('8','04126300','40');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('9','04126300','50');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('10','04126300','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('11','04126300','50');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('12','04427000','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('13','04427000','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('14','04427000','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('15','04427000','20');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('16','05990020','2');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('17','05990020','3');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('18','05990030','1');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('19','05990030','2');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('20','05990040','2');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('21','05990040','1');
+
 
 /* DOCUMENTO*/
 INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
@@ -508,5 +544,3 @@ VALUE (3,3);
 INSERT INTO richiesta(Cliente, Ordine)
 VALUE (4,4);
 
-INSERT INTO richiesta(Cliente, Ordine)
-VALUE (4,5);
