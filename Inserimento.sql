@@ -234,15 +234,6 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
 INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
     VALUES ('2022-10-18',50000,'09508080',2);
 
-/*INSERIMENTO ORDINE */
-INSERT INTO commessa(codicecommessa, datainizio, datafine) VALUES ()
-
-/* DOCUMENTO*/
-INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
-    VALUE('IT32X0300203280863596584462','2022-07-25',13000,'Fattura');
-INSERT INTO documento(DatiPagamento,DataDocumento, TipoDocumento)
-    VALUE('2022-07-25','DDT');
-
 
 /*INSERIMENTO UBICAZIONI*/
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)

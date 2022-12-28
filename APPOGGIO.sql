@@ -18,3 +18,17 @@ INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
     VALUE('IT32X0300203280863596584462','2022-12-21',50000,'FATTURA');
 INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
     VALUE('0','2022-12-21',0,'DDT');
+
+
+/*INSERIMENTO COMMESSA */
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-07-01','2022-07-20');
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-07-01','2022-07-20');
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-07-01','2022-07-20');
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-07-01','2022-07-20');
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-07-01','2022-07-20');
+
