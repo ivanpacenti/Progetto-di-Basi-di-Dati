@@ -44,7 +44,7 @@ CREATE TABLE DettaglioCicli(
     FOREIGN KEY (Ciclo) REFERENCES Ciclo(Tipologia));
 
 CREATE TABLE Commessa(
-    CodiceCommessa INTEGER PRIMARY KEY,
+    CodiceCommessa INTEGER PRIMARY KEY AUTO_INCREMENT,
     DataInizio DATE NOT NULL,
     DataFine DATE NOT NULL );
 

@@ -23,12 +23,16 @@ INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
 /*INSERIMENTO COMMESSA */
 INSERT INTO commessa( datainizio, datafine)
     VALUES ('2022-07-01','2022-07-20');
+
 INSERT INTO commessa( datainizio, datafine)
-    VALUES ('2022-07-01','2022-07-20');
+    VALUES ('2022-08-29','2022-9-18');
+
 INSERT INTO commessa( datainizio, datafine)
-    VALUES ('2022-07-01','2022-07-20');
+    VALUES ('2022-09-30','2022-10-01');
+
 INSERT INTO commessa( datainizio, datafine)
-    VALUES ('2022-07-01','2022-07-20');
+    VALUES ('2022-10-22','2022-11-12');
+
 INSERT INTO commessa( datainizio, datafine)
-    VALUES ('2022-07-01','2022-07-20');
+    VALUES ('2022-11-15','2022-11-30');
 
