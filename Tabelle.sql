@@ -126,12 +126,6 @@ CREATE TABLE Fabbricazione(
     Commessa INTEGER NOT NULL,
     FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa));
 
-CREATE TABLE Impegno(
-    Ordine INTEGER NOT NULL,
-    FOREIGN KEY (Ordine) REFERENCES Ordine(Numero),
-    Commessa INTEGER NOT NULL,
-    FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa));
-
 CREATE TABLE Richiesta(
     Cliente INTEGER NOT NULL,
     FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
