@@ -1,6 +1,5 @@
 USE Messersi;
 
-
 /*INSERIMENTO MACCHINE COMPLETE*/
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Massa)
 VALUES ('09681212','MINI-DUMPER TC85d','10','13000','0.5','0.6','1','850');
@@ -195,25 +194,25 @@ INSERT INTO cliente(RagioneSociale, PartitaIVA)
         VALUE ('IL RUSPAIOLO','46372894817');
 
 /* INSERIMENTO FORNITORI */
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('TUTTO VITI','75248262774');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('TAGLIO LASER S.A.S','76923450854');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('LAMIERE DOC','76888340320');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('DI BRUNO E STEFANO','50496876298');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('GIOCO E LUCE','12675565641');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('LAMPADINI','42719228824');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('GIANLUCHINI','72427555639');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('OGNI TUBO','71480986277');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('TUTTO TUBI','20452911970');
-INSERT INTO cliente(RagioneSociale, PartitaIVA)
+INSERT INTO fornitore(RagioneSociale, PartitaIVA)
         VALUE ('FILI.IT','86285140257');
 
 /* INSERIMENTO MACCHINA IN LAVORAZIONE*/
@@ -244,7 +243,7 @@ VALUES ('2','09681212','20');
 
 /* DOCUMENTO*/
 INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
-    VALUE('IT32X0300203280863596584462','2022-07-25',13000,'Fattura');
+    VALUE('IT32X0300203280863596584462','2022-07-25',13000,'FATTURA');
 INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
     VALUE('0','2022-07-25',0,'DDT');
 
