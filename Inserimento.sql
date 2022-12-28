@@ -105,7 +105,7 @@ VALUES ('09782020','4','06990002');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
 VALUES ('4','09680200');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09680200',1,'55030460');
+VALUES ('09680200','1','55030460');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
 VALUES ('09680200','2','55089090');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
@@ -290,4 +290,7 @@ INSERT INTO commessa( datainizio, datafine)
     VALUES ('2022-09-30','2022-10-01');
 
 INSERT INTO commessa( datainizio, datafine)
-    VALUES ('2022-10-22','2022-11-30');
+    VALUES ('2022-10-22','2022-11-12');
+
+INSERT INTO commessa( datainizio, datafine)
+    VALUES ('2022-11-15','2022-11-30');
