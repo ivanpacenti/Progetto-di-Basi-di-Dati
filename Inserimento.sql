@@ -38,13 +38,13 @@ VALUES ('30405560','BASE MOTORE','10',NULL,'3','1','6','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','10',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04543000','RONDELLE','20',NULL,'5','10','6','0.01');
+VALUES ('04543000','RONDELLE','2200',NULL,'5','10','6','0.01');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04369000','VITE LUNGA','18',NULL,'10','10','8','0.05');
+VALUES ('04369000','VITE LUNGA','220',NULL,'10','10','8','0.05');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04126300','VITE CORTA','50',NULL,'5','8','5','0.03');
+VALUES ('04126300','VITE CORTA','160',NULL,'5','8','5','0.03');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04427000','ASTA PIOMBO','12',NULL,'200','500','100','2');
+VALUES ('04427000','ASTA PIOMBO','8',NULL,'200','500','100','2');
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
@@ -55,11 +55,11 @@ VALUES ('06990003','TUBO QUADRO','10',NULL,'55','1050','55','40');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990010','TONDO TRAFILATO','10',NULL,'10','10','10','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('05990020','TONDO TRAFILATO','10',NULL,'13','13','14','10');
+VALUES ('05990020','TONDO TRAFILATO','5',NULL,'13','13','14','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('05990030','TONDO TRAFILATO','10',NULL,'15.5','15.5','10','15.5');
+VALUES ('05990030','TONDO TRAFILATO','3',NULL,'15.5','15.5','10','15.5');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('05990040','TONDO TRAFILATO','10',NULL,'20','40','40','20');
+VALUES ('05990040','TONDO TRAFILATO','3',NULL,'20','40','40','20');
 
 
 /*INSERIMENTO DISTINTE ARTICOLI*/
