@@ -45,6 +45,8 @@ INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezz
 VALUES ('04369000','VITE LUNGA','18',NULL,'10','10','8','0.05');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04126300','VITE CORTA','50',NULL,'5','8','5','0.03');
+INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
+VALUES ('04126300','ASTA PIOBMO','12',NULL,'200','500','100','12');
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
