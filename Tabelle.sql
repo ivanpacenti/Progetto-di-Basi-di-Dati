@@ -55,27 +55,18 @@ CREATE TABLE Ordine(
     Codice VARCHAR(8) NOT NULL,
     Quantità INTEGER NOT NULL);
 
-CREATE TABLE SediFornitori(
-    Fornitore INTEGER NOT NULL REFERENCES Fornitore(Codice),
-    Strada VARCHAR(25) NOT NULL,
-    Civico INTEGER NOT NULL,
-    Comune VARCHAR(25) NOT NULL);
-
-CREATE TABLE SediClienti(
-    Cliente INTEGER NOT NULL REFERENCES Cliente(Codice),
-    Strada VARCHAR(25) NOT NULL,
-    Civico INTEGER NOT NULL,
-    Comune VARCHAR(25) NOT NULL);
-
 CREATE TABLE Fornitore(
     Codice INTEGER AUTO_INCREMENT,
     RagioneSociale VARCHAR(30) NOT NULL,
     PartitaIVA VARCHAR(11) NOT NULL,
     PRIMARY KEY (Codice,PartitaIVA));
 
-CREATE TABLE RubricaF(
-    Fornitore INTEGER NOT NULL REFERENCES Fornitore(Codice),
-    Contatto VARCHAR(40) PRIMARY KEY);
+CREATE TABLE SediFornitori(
+    Fornitore INTEGER NOT NULL,
+    FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
+    Strada VARCHAR(25) NOT NULL,
+    Civico INTEGER NOT NULL,
+    Comune VARCHAR(25) NOT NULL);
 
 CREATE TABLE Cliente(
     Codice INTEGER AUTO_INCREMENT,
@@ -83,8 +74,25 @@ CREATE TABLE Cliente(
     PartitaIVA VARCHAR(11) NOT NULL,
     PRIMARY KEY (Codice,PartitaIVA));
 
+CREATE TABLE SediClienti(
+    Cliente INTEGER NOT NULL,
+    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
+    Strada VARCHAR(25) NOT NULL,
+    Civico INTEGER NOT NULL,
+    Comune VARCHAR(25) NOT NULL);
+
+
+
+CREATE TABLE RubricaF(
+    Fornitore INTEGER NOT NULL,
+    FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
+    Contatto VARCHAR(40) PRIMARY KEY);
+
+
+
 CREATE TABLE RubricaC(
-    Cliente INTEGER NOT NULL REFERENCES Cliente(Codice),
+    Cliente INTEGER NOT NULL,
+    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
     Contatto VARCHAR(40) PRIMARY KEY);
 
 CREATE TABLE Documento(
