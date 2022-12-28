@@ -48,6 +48,7 @@ INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
 VALUES ('2','09508080');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
 VALUES ('09508080','2','55141618');
+
 /*distinta CTL 45*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
 VALUES ('4','09203999');
@@ -192,12 +193,6 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
 
 /*INSERIMENTO ORDINE */
 INSERT INTO commessa(codicecommessa, datainizio, datafine) VALUES ()
-
-/* DOCUMENTO*/
-INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
-    VALUE('IT32X0300203280863596584462','2022-07-25',13000,'Fattura');
-INSERT INTO documento(DatiPagamento,DataDocumento, TipoDocumento)
-    VALUE('2022-07-25','DDT');
 
 
 /*INSERIMENTO UBICAZIONI*/
