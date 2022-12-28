@@ -544,3 +544,173 @@ VALUE (3,3);
 INSERT INTO richiesta(Cliente, Ordine)
 VALUE (4,4);
 
+/*  INSERIMENTO SEDI CLIENTI */
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (1,'via ascoli piceno',1,'Ancona');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (2,'via ruspe grosse',5,'Padova');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (3,'via dante alighieri',18,'Firenze');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (4,'via del vino',3,'OSTRA');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (5,'via Liguria',7,'Civitanova Marche');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (6,'via del giogo',1,'Ravenna');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (7,'via dei cagnoli',10,'Ancona');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (8,'via della storta',1,'Roma');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (9,'via marzocca',34,'Senigallia');
+
+INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
+    VALUE (10,'via milano ',19,'Milano');
+
+/* SEDI FORNITORI */
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(1,'via del sole',10,'Mondolfo') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(2,'via della luna',15,'Falconara') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(3,'via delle stelle ',20,' Aosta') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(4,'via emilia',1,'Rimini') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(5,'Via senza indugi',10,'Ancona') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(6,'via mare grosso',17,'Macerata') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(7,'via toledo',107,'Napoli') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(8,'via Marco enorme',56,'Ascoli') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(9,'via senza fretta',98,'Bari') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(10,'via del sole',100,'Catania') ;
+
+INSERT INTO sedifornitori(fornitore, strada, civico, comune)
+    VALUE(11,'via Arceviese',56,'Marotta') ;
+
+/* INSERIMENTO RUBRICA FORNITORI */
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(1, '0713431404');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(2, '0715498215');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(2, 'taglio@laser.it');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(3, 'lamiere.poderose@gmail.com');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(4, 'stefano@dbes.it');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(4, 'bruno@dbes.it');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(5, '0711557722');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(6, '0717835503');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(6, 'lampa@light.com');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(6, 'dini@light.com');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(7, 'gianluchino.ino.ino@gmail.com');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(8, '0733518399');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(8, 'tubi@gmx.com');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(9, '0715820573');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(9, 'domenico@tuttotubi.it');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(10, '0714531424');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(10, 'gianfranco.boss@fili.it');
+
+INSERT INTO RubricaF(Fornitore, Contatto)
+    VALUES(11, 'messersi@messersi.it');
+
+
+/* INSERIMENTO RUBRICA CLIENTI */
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(1, '0714841364');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(2, '0735701304');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(3, '0715338469');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(4, '0719483028');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(4, 'giovanni@vinobuono.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(4, 'andrea.ilgrande@vinobuono.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(5, 'macchine.potentissime@strongmachines.com');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(6, 'luca@stefano.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(7, '0715329856');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(7, 'giacomino.strong@gmail.com');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(8, '0711443873');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(9, 'matteo@bulldozer.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(9, 'ildistruttore@bulldozer.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(9, '0763749104');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(10, 'therock@ruspe.it');
+
+INSERT INTO RubricaC(Cliente, Contatto)
+    VALUES(10, '0718492053');
