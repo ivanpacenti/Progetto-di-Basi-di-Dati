@@ -294,3 +294,22 @@ INSERT INTO commessa( datainizio, datafine)
 
 INSERT INTO commessa( datainizio, datafine)
     VALUES ('2022-11-15','2022-11-30');
+
+/*inserita stipulazione*/
+
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (1,1);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (2,3);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (3,5);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (4,7);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (1,2);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (2,4);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (3,6);
+INSERT INTO Stipulazione(Cliente, Documento)
+VALUES (4,8);
