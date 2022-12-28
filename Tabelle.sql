@@ -75,7 +75,7 @@ CREATE TABLE Fornitore(
 
 CREATE TABLE RubricaF(
     Fornitore INTEGER NOT NULL REFERENCES Fornitore(Codice),
-    Contatto VARCHAR(30) PRIMARY KEY);
+    Contatto VARCHAR(40) PRIMARY KEY);
 
 CREATE TABLE Cliente(
     Codice INTEGER AUTO_INCREMENT,
@@ -85,7 +85,7 @@ CREATE TABLE Cliente(
 
 CREATE TABLE RubricaC(
     Cliente INTEGER NOT NULL REFERENCES Cliente(Codice),
-    Contatto VARCHAR(30) PRIMARY KEY);
+    Contatto VARCHAR(40) PRIMARY KEY);
 
 CREATE TABLE Documento(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
