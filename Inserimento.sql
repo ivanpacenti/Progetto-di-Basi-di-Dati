@@ -266,6 +266,8 @@ INSERT INTO macchinainlavorazione(Codice) VALUES ('09680200');
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09508080');
 INSERT INTO macchinainlavorazione(Codice) VALUES ('09508080');
 
+INSERT INTO macchinainlavorazione(Codice) VALUES ('09681212');
+
 /*INSERIMENTO ORDINE */
 INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
     VALUES ('2022-06-30',13000,'09681212',1);
@@ -275,6 +277,8 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
     VALUES ('2022-09-25',18000,'09680200',1);
 INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
     VALUES ('2022-10-18',50000,'09508080',2);
+INSERT INTO Ordine(DataOrdine, Importo, Codice, Quantità)
+    VALUES('2022-11-17', 13000, '09681212', 1);
 
 
 /*INSERIMENTO UBICAZIONI*/
@@ -371,6 +375,9 @@ INSERT INTO commessa( datainizio, datafine)
 
 INSERT INTO commessa( datainizio, datafine)
     VALUES ('2022-11-15','2022-11-30');
+
+INSERT INTO Commessa(DataInizio, DataFine)
+    VALUES ('2022-11-17','2022-12-23');
 
 /*inserita stipulazione*/
 
@@ -488,6 +495,12 @@ INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
 INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
     VALUES(5, '30405560', 1);
 
+INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
+    VALUES(6, '05990010', 3);
+
+INSERT INTO Composizione(MacchinaInLavorazione, Articolo, Quantità)
+    VALUES(6, '30156001', 1);
+
 /* INSERIMENTO FABBRICAZIONE */
 INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
     VALUES(1, 1);
@@ -503,6 +516,9 @@ INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
 
 INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
     VALUES(5, 4);
+
+INSERT INTO Fabbricazione(MacchinaInLavorazione, Commessa)
+    VALUES(6, 5);
 
 /* INSERIMENTO FORNITORE INTERNO MESSERSI */
 INSERT INTO Fornitore(RagioneSociale, PartitaIVA)
@@ -593,6 +609,9 @@ VALUE (3,3);
 
 INSERT INTO richiesta(Cliente, Ordine)
 VALUE (4,4);
+
+INSERT INTO Richiesta(Cliente, Ordine)
+VALUE (1,5);
 
 /*  INSERIMENTO SEDI CLIENTI */
 INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
