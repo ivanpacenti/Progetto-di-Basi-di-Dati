@@ -350,6 +350,11 @@ INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
 INSERT INTO documento(DatiPagamento,DataDocumento,Importo, TipoDocumento)
     VALUE('0','2022-12-21',0,'DDT');
 
+INSERT INTO Documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
+    VALUES('IT32X0300203280863596584462', '2022-12-25', 13000, 'FATTURA');
+INSERT INTO Documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
+    VALUES('0','2022-12-25',0,'DDT');
+
 
 /*INSERIMENTO COMMESSA */
 INSERT INTO commessa( datainizio, datafine)
@@ -385,6 +390,11 @@ INSERT INTO Stipulazione(Cliente, Documento)
 VALUES (3,6);
 INSERT INTO Stipulazione(Cliente, Documento)
 VALUES (4,8);
+INSERT INTO Stipulazione(Cliente, Documento)
+    VALUES(1,9);
+INSERT INTO Stipulazione(Cliente, Documento)
+    VALUES(1,10);
+
 
 /* INSERIMENTO CICLO */
 INSERT INTO Ciclo(Tipologia)
@@ -558,6 +568,18 @@ INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
 
 INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
     VALUES('06990003', 9, 8, 3);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990010', 11, 9, 5);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 9, 15);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990010', 11, 10, 5);
+
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('06990003', 9, 10, 15);
 
 /* POPOLAMENTO RICHIESTA */
 INSERT INTO richiesta(Cliente, Ordine)
