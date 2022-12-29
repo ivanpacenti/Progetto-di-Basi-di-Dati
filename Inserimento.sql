@@ -1,10 +1,10 @@
 /*INSERIMENTO MACCHINE COMPLETE*/
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('09681212','MINI-DUMPER TC85d','10','13000','0.5','0.6','1','850');
+VALUES ('09681212','MINI-DUMPER TC85d','0','13000','0.5','0.6','1','850');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('09576488','MINI-DUMPER TC50-e','10','15000','0.5','0.6','1','500');
+VALUES ('09576488','MINI-DUMPER TC50-e','0','15000','0.5','0.6','1','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('09680200','MINI-ESCAVATORE M38U','10','18000','1.3','1.3','0.8','3600');
+VALUES ('09680200','MINI-ESCAVATORE M38U','0','18000','1.3','1.3','0.8','3600');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('09782020','MINI-ESCAVATORE M18DS','10','17000','1.3','1.3','0.8','1850');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
@@ -28,7 +28,7 @@ VALUES ('45157808','BENNA CTL45','10',NULL,'3','1','6','400');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('45150898','TELAIO SOLLEVAMENTO BRACCI PALA','10',NULL,'3','1','6','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('30152800','CARTER PROTEZIONE PULEGGIE','10',NULL,'3','1','6','50');
+VALUES ('30152800','CARTER PROTEZIONE PULEGGIE','2',NULL,'3','1','6','50');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30156001','CARTER PROTEZIONE MOTORE','10',NULL,'3','1','6','50');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
@@ -38,13 +38,14 @@ VALUES ('30405560','BASE MOTORE','10',NULL,'3','1','6','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','10',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('04543000','RONDELLE','2200',NULL,'5','10','6','0.01');
+VALUES ('04543000','RONDELLE','2200',NULL,'5','10','6','0.001');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04369000','VITE LUNGA','220',NULL,'10','10','8','0.05');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04126300','VITE CORTA','160',NULL,'5','8','5','0.03');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04427000','ASTA PIOMBO','8',NULL,'200','500','100','2');
+
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
@@ -150,47 +151,67 @@ VALUES ('45157808','4','05990040');
 
 /*INSERIMENTO POSTI LOCAZIONE */
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','C','0','0','0');
+VALUES ('0000','C','0','0','0');
+/*2*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','1','1');
+VALUES ('20','A','a','1','1');
+/*3*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','1','2');
+VALUES ('1','A','a','1','2');
+/*4*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','1','3');
+VALUES ('1','A','a','1','3');
+/*5*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','1','4');
+VALUES ('5','A','a','1','4');
+/*6*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','1','5');
+VALUES ('5','A','a','1','5');
+/*7*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES ('0','A','a','2','1');
+/*8*/
 INSERT INTO Locazione( PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','2','2');
+VALUES ('2.2','A','a','2','2');
+/*9*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','2','3');
+VALUES ('1.5','A','a','2','3');
+/*10*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','2','4');
+VALUES ('0.6','A','a','2','4');
+/*11*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','2','5');
+VALUES ('100','A','a','2','5');
+/*12*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','3','1');
+VALUES ('5.5','A','a','3','1');
+/*13*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','3','2');
+VALUES ('2','A','a','3','2');
+/*14*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','3','3');
+VALUES ('2','A','a','3','3');
+/*15*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','3','4');
+VALUES ('2','A','a','3','4');
+/*16*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','3','5');
+VALUES ('20','A','a','3','5');
+/*17*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','1');
+VALUES ('30','A','a','4','1');
+/*18*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','2');
+VALUES ('15.5','A','a','4','2');
+/*19*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','3');
+VALUES ('31','A','a','4','3');
+/*20*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','4');
+VALUES ('40','A','a','4','4');
+/*21*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('0','A','a','4','5') ;
+VALUES ('20','A','a','4','5');
 
 
 /* INSERIMENTO CLIENTI */
@@ -257,10 +278,15 @@ INSERT INTO ordine(DataOrdine, Importo, Codice, Quantità)
 
 
 /*INSERIMENTO UBICAZIONI*/
+
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('1','04543000','1000');
+VALUES ('1','09508080','10');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('2','04543000','1000');
+VALUES ('1','09203999','10');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('1','09782020','10');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('2','04543000','2000');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('3','04543000','100');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
@@ -270,7 +296,7 @@ VALUES ('5','04369000','100');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('6','04369000','100');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('7','04369000','20');
+VALUES ('8','04369000','20');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('8','04126300','40');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
@@ -278,7 +304,9 @@ VALUES ('9','04126300','50');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('10','04126300','20');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
-VALUES ('11','04126300','50');
+VALUES ('11','30152800','2');
+INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
+VALUES ('12','04126300','50');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('12','04427000','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
