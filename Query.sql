@@ -25,6 +25,43 @@ WHERE CodiceScaffale = 8 AND NOT EXISTS (SELECT NULL
                                           WHERE Locazione = 8);
 
 
+/* QUERY 5: Visualizzazione Ordini in un determinato periodo */
+insert into commessa(datainizio, datafine) VALUE
+    (...);
+/* QUERY 6: MODIFICA COMMESSA DI LAVORAZIONE */
+UPDATE commessa
+SET (...)=(...)
+WHERE CodiceCOmmessa= 1;
+
+/* QUERY 7: VISUALIZZA COMMESSA DI LAVORAZIONE */
+select *
+FROM commessa
+WHERE CodiceCommessa=1;
+
+/* QUERY 8: RIMOZIONE COMMMESSA DI LAVORAZIONE */
+DELETE FROM commessa
+WHERE CodiceCommessa=1;
+
+/* QUERY 9: inserimento nuovo ordine.*/
+INSERT INTO ordine(dataordine, importo, codice, quantità)
+    VALUE(...);
+
+/* QUERY 10: MODIFICA ORDINE */
+UPDATE ordine
+SET importo=300
+WHERE Numero=2;
+
+
+/* QUERY 11:VISUALIZZA ORDINE */
+SELECT *
+FROM ordine
+WHERE Numero=1;
+
+/* QUERY 12: RIMOZIONE ORDINE */
+
+DELETE FROM ordine
+WHERE Numero=1;
+
 /* QUERY 13: Visualizzazione Ordini in un determinato periodo */
 SELECT *
 FROM Ordine
@@ -131,8 +168,8 @@ where Codice=1;
 
 /*QUERY 28:MODIFICA DATI FORNITORE*/
 update fornitore
-set fornitore.()=()
-where fornitore.Codice=();
+set fornitore.RagioneSociale='prova'
+where fornitore.Codice=1;
 
 /*QUERY 29:MODIFICA DATI FORNITORE*/
 DELETE FROM fornitore
