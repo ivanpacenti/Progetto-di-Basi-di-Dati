@@ -27,7 +27,9 @@ UPDATE Locazione JOIN Ubicazione ON Ubicazione.Locazione=Locazione.CodiceScaffal
 SET PesoOccupato=PesoOccupato+(SELECT Peso
                                 FROM Articolo
                                 WHERE Codice='04543000' AND Locazione=3)*50
-WHERE CodiceScaffale=5;
+WHERE CodiceScaffale=5 AND (PesoOccupato+(SELECT Peso
+                                FROM Articolo
+                                WHERE Codice='04543000' AND Locazione=3)*50)<100;
 DELETE FROM Ubicazione WHERE Ubicazione.Quantita=0;
 
 
