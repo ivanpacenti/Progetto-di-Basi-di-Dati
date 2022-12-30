@@ -109,8 +109,9 @@ FROM ubicazione join Articolo ON Ubicazione.Articolo=articolo.Codice
 WHERE Ubicazione.Articolo='04427000';
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo =04543000;
+
 UPDATE  locazione
-set PesoOccupato= PesoOccupato - 10
+set PesoOccupato= PesoOccupato - (valore)
 WHERE CodiceScaffale=2;
 
 
@@ -118,6 +119,30 @@ WHERE CodiceScaffale=2;
 SELECT Articolo.quantità, Articolo.Codice, Articolo.Descrizione
 FROM Articolo
 WHERE Articolo.quantità>0;
+
+/* QUERY 24:CALCOLO SPESA COMMESSA DI LAVORAZIONE */
+
+/* QUERY 25:INSERIMENTO DATI E OPERAZIONI DDT */
+
+
+/*QUERY 26:INSERIMENTO NUOVO FORNITORE*/
+INSERT INTO fornitore(ragionesociale, partitaiva)
+    VALUE ();
+
+/*QUERY 27:VISUALIZZA DATI FORNITORE*/
+SELECT *
+from fornitore
+where Codice=1;
+
+
+/*QUERY 28:MODIFICA DATI FORNITORE*/
+update fornitore
+set fornitore.()=()
+where fornitore.Codice=();
+
+/*QUERY 29:MODIFICA DATI FORNITORE*/
+DELETE FROM fornitore
+where Fornitore.codice= 2;
 
 /* QUERY 38: Comparazione tra fatture e DDT */
 SELECT Registrazione.Documento, Registrazione.Articolo, Registrazione.Quantità
