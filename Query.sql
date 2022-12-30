@@ -137,7 +137,7 @@ WHERE DataDocumento = '2022-12-25';
 INSERT INTO Articolo(codice, descrizione, quantità, prezzo, altezza, larghezza, profondità, peso)
     VALUE('09645326','ARTICOLO PROVA','0','1000','10','0.6','1','850');
 
-/* QUERY 20: VISALIZZA DATI ARTICOLO */
+/* QUERY 20: VISUALIZZA DATI ARTICOLO */
 SELECT *
 FROM articolo
 WHERE articolo.Codice='09645326';
@@ -218,19 +218,35 @@ from fornitore
 where Codice=1;
 
 /*QUERY 32: Modifica dati cliente */
-update fornitore
-set fornitore.()=()
-where fornitore.Codice=();
+UPDATE Cliente
+SET RagioneSociale='NICOLA S.N.C'
+WHERE RagioneSociale='PICCIA';
+#ALTERNATIVA
+UPDATE Cliente
+SET PartitaIVA='27776820634'
+WHERE PartitaIVA='03947264857';
 
 /*QUERY 33: ELIMINA DATI CLIENTE */
 DELETE FROM Cliente
 WHERE Cliente.codice = 2;
+
+/*QUERY 34: Inserimento nuova distinta. */
+
+/*QUERY 35: Visualizzazione dati distinta. */
+
+/*QUERY 36: Modifica dati distinta. */
+
+/*QUERY 37: Rimozione dati distinta. */
 
 /* QUERY 38: Comparazione tra fatture e DDT */
 SELECT Registrazione.Documento, Registrazione.Articolo, Registrazione.Quantità
 FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
+
+/* QUERY 39: Backup automatico.*/
+
+/* QUERY 40: Backup manuale.*/
 
 /* QUERY 41: Verifica del peso per ogni scaffale*/
 SELECT PesoOccupato, CodiceScaffale
