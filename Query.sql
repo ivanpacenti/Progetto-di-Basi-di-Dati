@@ -104,16 +104,17 @@ WHERE CodiceScaffale= '2';
 /* QUERY 22: rimozione dati articolo */
 DELETE FROM  articolo
 WHERE Codice='09645326';
+
 SELECT ubicazione.Locazione, ubicazione.Articolo,ubicazione.Quantita, peso
 FROM ubicazione join Articolo ON Ubicazione.Articolo=articolo.Codice
+
 WHERE Ubicazione.Articolo='04427000';
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo =04543000;
 
 UPDATE  locazione
-set PesoOccupato= PesoOccupato - (valore)
+set PesoOccupato= PesoOccupato - (10)
 WHERE CodiceScaffale=2;
-
 
 /* QUERY 23:VISUALIZZAZIONE LISTA ARTICOLI */
 SELECT Articolo.quantità, Articolo.Codice, Articolo.Descrizione
@@ -143,6 +144,24 @@ where fornitore.Codice=();
 /*QUERY 29:MODIFICA DATI FORNITORE*/
 DELETE FROM fornitore
 where Fornitore.codice= 2;
+
+/*QUERY 30:INSERIMENTO DATI CLIENTE*/
+INSERT INTO cliente(ragionesociale, partitaiva)
+    VALUE();
+
+/*QUERY 31:VISUALIZZA DATI CLIENTE*/
+SELECT *
+from fornitore
+where Codice=1;
+
+/*QUERY 32:MODIFICA DATI CLIENTE*/
+update fornitore
+set fornitore.()=()
+where fornitore.Codice=();
+
+/*QUERY 33:ELIMINA DATI CLIENTE*/
+DELETE FROM Cliente
+WHERE Cliente.codice = 2;
 
 /* QUERY 38: Comparazione tra fatture e DDT */
 SELECT Registrazione.Documento, Registrazione.Articolo, Registrazione.Quantità
