@@ -114,8 +114,10 @@ set PesoOccupato= PesoOccupato - 10
 WHERE CodiceScaffale=2;
 
 
-/* QUERY 23: Comparazione tra fatture e DDT */
-
+/* QUERY 23:VISUALIZZAZIONE LISTA ARTICOLI */
+SELECT Articolo.quantità, Articolo.Codice, Articolo.Descrizione
+FROM Articolo
+WHERE Articolo.quantità>0;
 
 /* QUERY 38: Comparazione tra fatture e DDT */
 SELECT Registrazione.Documento, Registrazione.Articolo, Registrazione.Quantità
