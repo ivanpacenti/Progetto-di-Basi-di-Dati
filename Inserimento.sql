@@ -58,7 +58,7 @@ VALUES ('05990010','TONDO TRAFILATO','10',NULL,'10','10','10','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990020','TONDO TRAFILATO','5',NULL,'13','13','14','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('05990030','TONDO TRAFILATO','3',NULL,'15.5','15.5','10','15.5');
+VALUES ('05990030','TONDO TRAFILATO','3',NULL,'15.5','15.5','10','16');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990040','TONDO TRAFILATO','3',NULL,'20','40','40','20');
 
@@ -202,10 +202,10 @@ INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaSca
 VALUES ('30','A','a','4','1');
 /*18*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('15.5','A','a','4','2');
+VALUES ('16','A','a','4','2');
 /*19*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('31','A','a','4','3');
+VALUES ('32','A','a','4','3');
 /*20*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES ('40','A','a','4','4');

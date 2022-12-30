@@ -1,6 +1,6 @@
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
-    PesoOccupato INTEGER NOT NULL,
+    PesoOccupato FLOAT NOT NULL,
     Sezione CHAR(1) NOT NULL,
     Scaffalatura CHAR(1) NOT NULL,
     RigaScaff INTEGER NOT NULL,
@@ -11,10 +11,10 @@ CREATE TABLE Articolo(
     Descrizione VARCHAR(50) NOT NULL,
     Quantità INTEGER NOT NULL,
     Prezzo INTEGER,
-    Altezza INTEGER NOT NULL,
-    Larghezza INTEGER NOT NULL,
-    Profondità INTEGER NOT NULL,
-    Peso INTEGER NOT NULL);
+    Altezza FLOAT NOT NULL,
+    Larghezza FLOAT NOT NULL,
+    Profondità FLOAT NOT NULL,
+    Peso FLOAT NOT NULL);
 
 CREATE TABLE Ubicazione(
     Locazione INTEGER NOT NULL ,
