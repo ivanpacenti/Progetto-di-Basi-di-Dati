@@ -101,11 +101,20 @@ update locazione
 SET PesoOccupato = 30
 WHERE CodiceScaffale= '2';
 
-/* QUERY 22: Comparazione tra fatture e DDT */
+/* QUERY 22: rimozione dati articolo */
+DELETE FROM  articolo
+WHERE Codice='09645326';
+SELECT ubicazione.Locazione, ubicazione.Articolo,ubicazione.Quantita, peso
+FROM ubicazione join Articolo ON Ubicazione.Articolo=articolo.Codice
+WHERE Ubicazione.Articolo='04427000';
+DELETE FROM Ubicazione
+WHERE Ubicazione.Articolo =04543000;
+UPDATE  locazione
+set PesoOccupato= PesoOccupato - 10
+WHERE CodiceScaffale=2;
 
 
 /* QUERY 23: Comparazione tra fatture e DDT */
-
 
 
 /* QUERY 38: Comparazione tra fatture e DDT */
