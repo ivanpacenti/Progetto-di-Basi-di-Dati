@@ -1,66 +1,90 @@
 USE messersi;
-/* FILE  PER LE  QUERY*/
-
 
 /* QUERY 1: Calcolo spesa totale di un dato cliente */
 SELECT SUM(Importo) AS SpesaTotale
-FROM Stipulazione JOIN Documento ON Stipulazione.Documento = Documento.Numero
-WHERE Cliente = 1;
+FROM Stipulazione s JOIN Documento d ON s.Documento = d.Numero
+WHERE s.Cliente = 1;
 
 
 /* QUERY 2: Inserimento nuova locazione */
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-    VALUES(0, 'A', 'b', 1, 1);  -- VALUES(...) da scrivere sul pdf
+    VALUES(0, 'A', 'b', 1, 1);
 
 
 /* QUERY 3: Visualizzazione locazione */
 SELECT Sezione, Scaffalatura, RigaScaff, ColonnaScaff, PesoOccupato
-FROM locazione
+FROM Locazione
 WHERE CodiceScaffale = 4;
+
 
 /* QUERY 4: Rimozione locazione */
 DELETE FROM Locazione
-WHERE CodiceScaffale = 8 AND NOT EXISTS (SELECT NULL
-                                          FROM Ubicazione
-                                          WHERE Locazione = 8);
+WHERE CodiceScaffale = 8 AND NOT EXISTS(SELECT NULL
+                                        FROM Ubicazione
+                                        WHERE Locazione = 8);
 
 
-/* QUERY 5: Visualizzazione Ordini in un determinato periodo */
-insert into commessa(datainizio, datafine) VALUE
-    (...);
-/* QUERY 6: MODIFICA COMMESSA DI LAVORAZIONE */
-UPDATE commessa
-SET (...)=(...)
-WHERE CodiceCOmmessa= 1;
-
-/* QUERY 7: VISUALIZZA COMMESSA DI LAVORAZIONE */
-select *
-FROM commessa
-WHERE CodiceCommessa=1;
-
-/* QUERY 8: RIMOZIONE COMMMESSA DI LAVORAZIONE */
-DELETE FROM commessa
-WHERE CodiceCommessa=1;
-
-/* QUERY 9: inserimento nuovo ordine.*/
-INSERT INTO ordine(dataordine, importo, codice, quantità)
-    VALUE(...);
-
-/* QUERY 10: MODIFICA ORDINE */
-UPDATE ordine
-SET importo=300
-WHERE Numero=2;
+/* QUERY 5: Inserimento commessa di lavorazione */
+INSERT INTO Commessa(datainizio, datafine)
+    VALUES('2022-10-29', '2022-11-29');
 
 
-/* QUERY 11:VISUALIZZA ORDINE */
-SELECT *
-FROM ordine
-WHERE Numero=1;
+/* QUERY 6: Modifica data fine commessa di lavorazione */
+UPDATE Commessa
+SET DataFine = '2022-11-30'
+WHERE CodiceCommessa = 7;
 
-/* QUERY 12: RIMOZIONE ORDINE */
 
-DELETE FROM ordine
-WHERE Numero=1;
+/* QUERY 7: Visualizza commessa di lavorazione */
+SELECT c.CodiceCommessa, c.DataInizio, c.DataFine, f.MacchinaInLavorazione, m.Codice
+FROM Commessa c JOIN Fabbricazione f ON c.CodiceCommessa = f.Commessa
+                JOIN MacchinaInLavorazione m on f.MacchinaInLavorazione = m.Matricola
+WHERE CodiceCommessa = 4;
+
+
+/* QUERY 8: Rimozione commessa di lavorazione */
+DELETE FROM Commessa
+WHERE CodiceCommessa = 1;
+
+
+/* QUERY 9: Inserimento nuovo ordine */
+START TRANSACTION;
+INSERT INTO Ordine(dataordine, importo, codice, quantità)
+    VALUE('2022-11-30', 13000, '09412050', 1);
+INSERT INTO Richiesta(Cliente, Ordine)
+    SELECT 3, Numero
+    FROM Ordine
+    ORDER BY Numero DESC
+    LIMIT 1;
+COMMIT WORK;
+
+
+/* QUERY 10: Modifica ordine */
+-- Variante 1: modifica dell'importo
+UPDATE Ordine
+SET Importo = 300
+WHERE Numero = 2;
+-- Variante 2: modifica della quantità
+UPDATE Ordine
+SET Quantità = 3
+WHERE Numero = 2;
+
+
+/* QUERY 11: Visualizza ordine */
+SELECT o.Numero, o.DataOrdine, o.Importo, o.Codice, o.Quantità, c.Codice AS CodiceCliente, c.RagioneSociale
+FROM Ordine o JOIN Richiesta r ON o.Numero = r.Ordine
+              JOIN Cliente c on r.Cliente = c.Codice
+WHERE Numero = 4;
+
+
+/* QUERY 12: Rimozione ordine */
+START TRANSACTION;
+DELETE FROM Ordine
+WHERE Numero = 1;
+DELETE FROM Richiesta
+WHERE Ordine = 1;
+COMMIT WORK;
+
 
 /* QUERY 13: Visualizzazione Ordini in un determinato periodo */
 SELECT *
@@ -170,35 +194,35 @@ INSERT INTO SediFornitori(Fornitore, Strada, Civico, Comune)
     WHERE RagioneSociale = 'Fornitore di Prova';
 COMMIT WORK;
 
-/*QUERY 27:VISUALIZZA DATI FORNITORE*/
+/*QUERY 27: Visualizza dati fornitore */
 SELECT f.Codice, f.RagioneSociale, f.PartitaIVA, r.Contatto, s.Strada, s.Civico, s.Comune
 FROM Fornitore f JOIN RubricaF r ON r.Fornitore = f.Codice JOIN SediFornitori s ON s.Fornitore = f.Codice
 WHERE f.Codice = 2;
 
-/*QUERY 28:MODIFICA DATI FORNITORE*/
-update fornitore
-set fornitore.RagioneSociale='prova'
-where fornitore.Codice=1;
+/*QUERY 28: Modifica dati fornitore */
+UPDATE fornitore
+SET fornitore.RagioneSociale='prova'
+WHERE fornitore.Codice=1;
 
-/*QUERY 29:MODIFICA DATI FORNITORE*/
+/*QUERY 29: Rimozione dati fornitore */
 DELETE FROM fornitore
 where Fornitore.codice= 2;
 
-/*QUERY 30:INSERIMENTO DATI CLIENTE*/
+/*QUERY 30: Inserimento nuovo cliente */
 INSERT INTO cliente(ragionesociale, partitaiva)
     VALUE();
 
-/*QUERY 31:VISUALIZZA DATI CLIENTE*/
+/*QUERY 31: Visualizza dati cliente */
 SELECT *
 from fornitore
 where Codice=1;
 
-/*QUERY 32:MODIFICA DATI CLIENTE*/
+/*QUERY 32: Modifica dati cliente */
 update fornitore
 set fornitore.()=()
 where fornitore.Codice=();
 
-/*QUERY 33:ELIMINA DATI CLIENTE*/
+/*QUERY 33: ELIMINA DATI CLIENTE */
 DELETE FROM Cliente
 WHERE Cliente.codice = 2;
 
