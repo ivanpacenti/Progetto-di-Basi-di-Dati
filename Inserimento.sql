@@ -610,9 +610,6 @@ VALUE (3,3);
 INSERT INTO richiesta(Cliente, Ordine)
 VALUE (4,4);
 
-INSERT INTO Richiesta(Cliente, Ordine)
-VALUE (1,5);
-
 /*  INSERIMENTO SEDI CLIENTI */
 INSERT INTO sediclienti(Cliente, Strada, Civico, Comune)
     VALUE (1,'via ascoli piceno',1,'Ancona');
