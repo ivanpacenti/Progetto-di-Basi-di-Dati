@@ -5,7 +5,6 @@ FROM Ubicazione
 WHERE Ubicazione.Articolo = '04543000'
   AND Ubicazione.Locazione = 3;
 
-
 /* QUERY 48: Visualizzazione locazione articolo.*/
 SELECT Sezione, RigaScaff, ColonnaScaff, Quantita
 FROM Locazione
@@ -40,7 +39,6 @@ DELETE
 FROM Ubicazione
 WHERE Ubicazione.Quantita = 0
   AND Locazione = 3;
-
 
 /* QUERY 46: Assegnamento articolo a locazione.*/
 
@@ -79,3 +77,15 @@ FROM Documento D
 WHERE D.Importo>10000;
 
 /* QUERY 43: Modifica importo documento.*/
+
+UPDATE Documento D
+SET D.Importo=1999
+WHERE D.Numero=3;
+
+/* QUERY 42: Inserimento nuovo documento.*/
+
+INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
+    VALUES('IT84H36000032000CA004857798','2022-06-08',16000,'FATTURA');
+INSERT INTO Registrazione(Articolo, Fornitore, Documento, Quantità)
+    VALUES('05990010',4,LAST_INSERT_ID(),20);
+
