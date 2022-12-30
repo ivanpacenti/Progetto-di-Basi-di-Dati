@@ -171,10 +171,9 @@ INSERT INTO SediFornitori(Fornitore, Strada, Civico, Comune)
 COMMIT WORK;
 
 /*QUERY 27:VISUALIZZA DATI FORNITORE*/
-SELECT *
-FROM Fornitore
-WHERE Codice=1;
-
+SELECT f.Codice, f.RagioneSociale, f.PartitaIVA, r.Contatto, s.Strada, s.Civico, s.Comune
+FROM Fornitore f JOIN RubricaF r ON r.Fornitore = f.Codice JOIN SediFornitori s ON s.Fornitore = f.Codice
+WHERE f.Codice = 2;
 
 /*QUERY 28:MODIFICA DATI FORNITORE*/
 update fornitore
