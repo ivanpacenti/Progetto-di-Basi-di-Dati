@@ -17,7 +17,6 @@ INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaSca
 SELECT Sezione, Scaffalatura, RigaScaff, ColonnaScaff, PesoOccupato
 FROM locazione
 WHERE CodiceScaffale = 4;
--- Possiamo inserire anche una nuova operazione del tipo: visualizzazione articoli in una specifica locazione
 
 /* QUERY 4: Rimozione locazione */
 DELETE FROM Locazione
@@ -44,9 +43,7 @@ FROM Commessa
 WHERE DataInizio > '2022-07-15' AND DataFine < '2022-10-28';
 
 
-/* QUERY 16: Consultazione degli Articoli presenti in magazzino
-   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CAMBIARE NOME IN PDF
-   */
+/* QUERY 16: Consultazione degli Articoli presenti in magazzino */
 SELECT Codice, Descrizione, Quantità
 FROM Articolo
 WHERE Articolo.Quantità > 0;
@@ -85,41 +82,37 @@ FROM articolo
 WHERE articolo.Codice='09645326';
 
 /* QUERY 21: MODIFICA DATI ARTICOLO */
-UPDATE articolo
-SET peso =10
-WHERE Codice='09645326';
+START TRANSACTION;
+UPDATE Articolo
+SET Peso = 15
+WHERE Codice = '05990030';
 
-SELECT Articolo, Locazione
-FROM Ubicazione
-WHERE Articolo= 04543000;
+UPDATE Locazione JOIN Ubicazione ON Ubicazione.Locazione = Locazione.CodiceScaffale
+SET PesoOccupato = PesoOccupato - ((SELECT Peso
+                                   FROM Articolo
+                                   WHERE Codice = '05990030') * Ubicazione.Quantita)
+WHERE Ubicazione.Articolo = '05990030';
+COMMIT WORK;
 
-SELECT PesoOccupato
-FROM locazione
-WHERE CodiceScaffale= '2';
+/* QUERY 22: Rimozione dati articolo */
+START TRANSACTION;
+UPDATE Locazione JOIN Ubicazione ON Ubicazione.Locazione = Locazione.CodiceScaffale
+SET PesoOccupato = PesoOccupato - ((SELECT Peso
+                                   FROM Articolo
+                                   WHERE Codice = '04427000') * Ubicazione.Quantita)
+WHERE Ubicazione.Articolo = '04427000';
 
-update locazione
-SET PesoOccupato = 30
-WHERE CodiceScaffale= '2';
-
-/* QUERY 22: rimozione dati articolo */
-DELETE FROM  articolo
-WHERE Codice='09645326';
-
-SELECT ubicazione.Locazione, ubicazione.Articolo,ubicazione.Quantita, peso
-FROM ubicazione join Articolo ON Ubicazione.Articolo=articolo.Codice
-
-WHERE Ubicazione.Articolo='04427000';
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo =04543000;
 
-UPDATE  locazione
-set PesoOccupato= PesoOccupato - (10)
-WHERE CodiceScaffale=2;
+DELETE FROM Articolo
+WHERE Codice='09645326';
+COMMIT WORK;
 
-/* QUERY 23:VISUALIZZAZIONE LISTA ARTICOLI */
-SELECT Articolo.quantità, Articolo.Codice, Articolo.Descrizione
-FROM Articolo
-WHERE Articolo.quantità>0;
+/* QUERY 23: Visualizzazione articoli in una specifica locazione */
+SELECT Locazione.CodiceScaffale, a.Codice, a.Descrizione, u.Quantita
+FROM Locazione JOIN ubicazione u on locazione.CodiceScaffale = u.Locazione JOIN articolo a on u.Articolo = a.Codice
+WHERE Locazione.CodiceScaffale = 1;
 
 /* QUERY 24:CALCOLO SPESA COMMESSA DI LAVORAZIONE */
 
