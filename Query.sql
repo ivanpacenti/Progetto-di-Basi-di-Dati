@@ -140,7 +140,7 @@ SET PesoOccupato = PesoOccupato - ((SELECT Peso
 WHERE Ubicazione.Articolo = '04427000';
 
 DELETE FROM Ubicazione
-WHERE Ubicazione.Articolo =04543000;
+WHERE Ubicazione.Articolo = '04427000';
 
 DELETE FROM Articolo
 WHERE Codice='09645326';
@@ -157,13 +157,23 @@ WHERE Locazione.CodiceScaffale = 1;
 
 
 /*QUERY 26:INSERIMENTO NUOVO FORNITORE*/
-INSERT INTO fornitore(ragionesociale, partitaiva)
-    VALUE ();
+START TRANSACTION;
+INSERT INTO Fornitore(ragionesociale, partitaiva)
+    VALUE ('Fornitore di Prova', '12345678901');
+INSERT INTO RubricaF(Fornitore, Contatto)
+    SELECT Codice, 'email@email.it'
+    FROM Fornitore
+    WHERE RagioneSociale = 'Fornitore di Prova';
+INSERT INTO SediFornitori(Fornitore, Strada, Civico, Comune)
+    SELECT Codice, 'Via di Prova', 1, 'Ancona'
+    FROM Fornitore
+    WHERE RagioneSociale = 'Fornitore di Prova';
+COMMIT WORK;
 
 /*QUERY 27:VISUALIZZA DATI FORNITORE*/
 SELECT *
-from fornitore
-where Codice=1;
+FROM Fornitore
+WHERE Codice=1;
 
 
 /*QUERY 28:MODIFICA DATI FORNITORE*/
