@@ -25,6 +25,43 @@ WHERE CodiceScaffale = 8 AND NOT EXISTS (SELECT NULL
                                           WHERE Locazione = 8);
 
 
+/* QUERY 5: Visualizzazione Ordini in un determinato periodo */
+insert into commessa(datainizio, datafine) VALUE
+    (...);
+/* QUERY 6: MODIFICA COMMESSA DI LAVORAZIONE */
+UPDATE commessa
+SET (...)=(...)
+WHERE CodiceCOmmessa= 1;
+
+/* QUERY 7: VISUALIZZA COMMESSA DI LAVORAZIONE */
+select *
+FROM commessa
+WHERE CodiceCommessa=1;
+
+/* QUERY 8: RIMOZIONE COMMMESSA DI LAVORAZIONE */
+DELETE FROM commessa
+WHERE CodiceCommessa=1;
+
+/* QUERY 9: inserimento nuovo ordine.*/
+INSERT INTO ordine(dataordine, importo, codice, quantità)
+    VALUE(...);
+
+/* QUERY 10: MODIFICA ORDINE */
+UPDATE ordine
+SET importo=300
+WHERE Numero=2;
+
+
+/* QUERY 11:VISUALIZZA ORDINE */
+SELECT *
+FROM ordine
+WHERE Numero=1;
+
+/* QUERY 12: RIMOZIONE ORDINE */
+
+DELETE FROM ordine
+WHERE Numero=1;
+
 /* QUERY 13: Visualizzazione Ordini in un determinato periodo */
 SELECT *
 FROM Ordine
@@ -103,7 +140,7 @@ SET PesoOccupato = PesoOccupato - ((SELECT Peso
 WHERE Ubicazione.Articolo = '04427000';
 
 DELETE FROM Ubicazione
-WHERE Ubicazione.Articolo =04543000;
+WHERE Ubicazione.Articolo = '04427000';
 
 DELETE FROM Articolo
 WHERE Codice='09645326';
@@ -120,19 +157,28 @@ WHERE Locazione.CodiceScaffale = 1;
 
 
 /*QUERY 26:INSERIMENTO NUOVO FORNITORE*/
-INSERT INTO fornitore(ragionesociale, partitaiva)
-    VALUE ();
+START TRANSACTION;
+INSERT INTO Fornitore(ragionesociale, partitaiva)
+    VALUE ('Fornitore di Prova', '12345678901');
+INSERT INTO RubricaF(Fornitore, Contatto)
+    SELECT Codice, 'email@email.it'
+    FROM Fornitore
+    WHERE RagioneSociale = 'Fornitore di Prova';
+INSERT INTO SediFornitori(Fornitore, Strada, Civico, Comune)
+    SELECT Codice, 'Via di Prova', 1, 'Ancona'
+    FROM Fornitore
+    WHERE RagioneSociale = 'Fornitore di Prova';
+COMMIT WORK;
 
 /*QUERY 27:VISUALIZZA DATI FORNITORE*/
-SELECT *
-from fornitore
-where Codice=1;
-
+SELECT f.Codice, f.RagioneSociale, f.PartitaIVA, r.Contatto, s.Strada, s.Civico, s.Comune
+FROM Fornitore f JOIN RubricaF r ON r.Fornitore = f.Codice JOIN SediFornitori s ON s.Fornitore = f.Codice
+WHERE f.Codice = 2;
 
 /*QUERY 28:MODIFICA DATI FORNITORE*/
 update fornitore
-set fornitore.()=()
-where fornitore.Codice=();
+set fornitore.RagioneSociale='prova'
+where fornitore.Codice=1;
 
 /*QUERY 29:MODIFICA DATI FORNITORE*/
 DELETE FROM fornitore
