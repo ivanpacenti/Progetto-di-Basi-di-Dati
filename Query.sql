@@ -19,12 +19,11 @@ FROM locazione
 WHERE CodiceScaffale = 4;
 -- Possiamo inserire anche una nuova operazione del tipo: visualizzazione articoli in una specifica locazione
 
-
 /* QUERY 4: Rimozione locazione */
 DELETE FROM Locazione
-WHERE CodiceScaffale = 87 AND NOT EXISTS (SELECT NULL
+WHERE CodiceScaffale = 8 AND NOT EXISTS (SELECT NULL
                                           FROM Ubicazione
-                                          WHERE Locazione = 87);
+                                          WHERE Locazione = 8);
 
 
 /* QUERY 13: Visualizzazione Ordini in un determinato periodo */
@@ -75,6 +74,38 @@ WHERE DataDocumento > '2022-11-29';
 SELECT SUM(Importo)
 FROM Documento
 WHERE DataDocumento = '2022-12-25';
+
+/* QUERY 19: Inserimento nuovo articolo */
+INSERT INTO Articolo(codice, descrizione, quantità, prezzo, altezza, larghezza, profondità, peso)
+    VALUE('09645326','ARTICOLO PROVA','0','1000','10','0.6','1','850');
+
+/* QUERY 20: VISALIZZA DATI ARTICOLO */
+SELECT *
+FROM articolo
+WHERE articolo.Codice='09645326';
+
+/* QUERY 21: MODIFICA DATI ARTICOLO */
+UPDATE articolo
+SET peso =10
+WHERE Codice='09645326';
+
+SELECT Articolo, Locazione
+FROM Ubicazione
+WHERE Articolo= 04543000;
+
+SELECT PesoOccupato
+FROM locazione
+WHERE CodiceScaffale= '2';
+
+update locazione
+SET PesoOccupato = 30
+WHERE CodiceScaffale= '2';
+
+/* QUERY 22: Comparazione tra fatture e DDT */
+
+
+/* QUERY 23: Comparazione tra fatture e DDT */
+
 
 
 /* QUERY 38: Comparazione tra fatture e DDT */
