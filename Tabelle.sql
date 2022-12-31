@@ -120,7 +120,7 @@ CREATE TABLE Composizione(
 CREATE TABLE Registrazione(
     Articolo VARCHAR(8) NOT NULL,
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
-    Fornitore INTEGER NOT NULL,
+    Fornitore INTEGER,
     FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
     Documento INTEGER NOT NULL,
     FOREIGN KEY (Documento) REFERENCES Documento(Numero),
