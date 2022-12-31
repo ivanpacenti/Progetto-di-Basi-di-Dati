@@ -170,8 +170,11 @@ FROM Commessa c JOIN Fabbricazione f ON c.CodiceCommessa = f.Commessa
                 JOIN Articolo a ON m.Codice = a.Codice
 WHERE Commessa = 4;
 
-/* QUERY 25: Inserimento dati e operazioni DDT */
-
+/* QUERY 25: Visualizza macchine più ordinate */
+SELECT Codice, COUNT(Codice) AS VolteOrdinata
+FROM Ordine
+GROUP BY Codice
+ORDER BY VolteOrdinata DESC;
 
 /* QUERY 26: Inserimento nuovo fornitore*/
 START TRANSACTION;
@@ -286,11 +289,15 @@ FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
 
-/* QUERY 39: Backup automatico */
+/* QUERY 39: Visualizza locazioni vuote */
+SELECT *
+FROM Locazione
+WHERE PesoOccupato = 0;
 
-
-/* QUERY 40: Backup manuale */
-
+/* QUERY 40: Visualizza locazioni in ordine crescente di peso occupato */
+SELECT *
+FROM Locazione
+ORDER BY PesoOccupato;
 
 /* QUERY 41: Verifica del peso per ogni scaffale */
 SELECT PesoOccupato, CodiceScaffale
