@@ -213,11 +213,18 @@ WHERE PartitaIVA='03947264857';
 DELETE FROM Cliente
 WHERE Cliente.codice = 2;
 
-/* QUERY 34: Inserimento nuova distinta */
+/*QUERY 34: Inserimento nuova distinta. */
+START TRANSACTION;
+INSERT INTO Distinta(numeroarticoli, articolodiriferimento)
+    VALUE(3,'04126300');
+INSERT INTO dettagliodistinta(Distinta, Quantità, Articolo)
+    VALUE ('prova',3,'04126300');
+COMMIT WORK;
 
-
-/* QUERY 35: Visualizzazione dati distinta */
-
+/*QUERY 35: Visualizzazione dati distinta. */
+SELECT *
+FROM distinta
+WHERE ArticoloDiRiferimento='05990030';
 
 /* QUERY 36: Modifica dati distinta */
 
