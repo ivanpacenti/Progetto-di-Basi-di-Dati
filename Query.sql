@@ -396,3 +396,16 @@ WHERE u.Articolo = '04543000' AND u.Locazione = 3;
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo = '04543000' AND Ubicazione.Locazione = 3;
 COMMIT WORK;
+
+-- QUERY PER VEDERE GLI ARTICOLI CON QUANTITà CHE NON SONO PRESENTI SU UBICAZIONE
+
+SELECT *
+FROM articolo
+WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
+                             FROM ubicazione) and articolo.Quantità>0;
+
+-- QUERY PER VEDERE GLI ARTICOLI PRESENTI PRESENTI IN DATABSE MA DI CUI QUANTITà =0
+SELECT *
+FROM articolo
+WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
+                             FROM ubicazione);

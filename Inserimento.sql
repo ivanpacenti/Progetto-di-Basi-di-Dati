@@ -14,29 +14,32 @@ VALUES ('09508080','ROBOKLIN 25','10','25000','2.5','2','3','4200');
 
 /*INSERIMENTO COMPONETI MACCHINA*/
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55141618','TELAIO SOTTOCARRO ROBOKLIN','10',NULL,'3','1','6','120');
+VALUES ('55141618','TELAIO SOTTOCARRO ROBOKLIN','0',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55030790','TELAIO POSTO GUIDA CTL45','15',NULL,'1.5','1.5','1','100');
+VALUES ('55030790','TELAIO POSTO GUIDA CTL45','0',NULL,'1.5','1.5','1','100');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55030450','TELAIO POSTO GUIDA M18DS','10',NULL,'3','1','6','120');
+VALUES ('55030450','TELAIO POSTO GUIDA M18DS','0',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55030460','TELAIO POSTO GUIDA M38U','20',NULL,'3','1','6','120');
+VALUES ('55030460','TELAIO POSTO GUIDA M38U','0',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55181768','TELAIO SOTTOCARRO CTL45','10',NULL,'3','1','6','400');
+VALUES ('55181768','TELAIO SOTTOCARRO CTL45','0',NULL,'3','1','6','400');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('45157808','BENNA CTL45','10',NULL,'3','1','6','400');
+VALUES ('45157808','BENNA CTL45','0',NULL,'3','1','6','400');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('45150898','TELAIO SOLLEVAMENTO BRACCI PALA','10',NULL,'3','1','6','500');
+VALUES ('45150898','TELAIO SOLLEVAMENTO BRACCI PALA','0',NULL,'3','1','6','500');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30152800','CARTER PROTEZIONE PULEGGIE','2',NULL,'3','1','6','50');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('30156001','CARTER PROTEZIONE MOTORE','10',NULL,'3','1','6','50');
+VALUES ('30156001','CARTER PROTEZIONE MOTORE','0',NULL,'3','1','6','50');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55089090','TELAIO BRACCI','10',NULL,'3','1','6','400');
+VALUES ('55089090','TELAIO BRACCI','0',NULL,'3','1','6','400');
+
+-- ARTICOLO INSERITO PER VERIFICARE LA QUERY PER VEDERE SE QUALCHE ARTICOLO NON HA UBICAZIONE!!!!!!
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('30405560','BASE MOTORE','10',NULL,'3','1','6','500');
+
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','10',NULL,'3','1','6','120');
+VALUES ('55037000','TELAIO POSTO GUIDA TC50-e','0',NULL,'3','1','6','120');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('04543000','RONDELLE','2200',NULL,'5','10','6','0.001');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
@@ -48,13 +51,13 @@ VALUES ('04427000','ASTA PIOMBO','8',NULL,'200','500','100','2');
 
 /*INSERIMENTO MATERIE PRIME */
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('06990000','TUBO QUADRO','10',NULL,'50','1000','50','30');
+VALUES ('06990000','TUBO QUADRO','0',NULL,'50','1000','50','30');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('06990002','TUBO QUADRO','10',NULL,'55','900','50','20');
+VALUES ('06990002','TUBO QUADRO','0',NULL,'55','900','50','20');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('06990003','TUBO QUADRO','10',NULL,'55','1050','55','40');
+VALUES ('06990003','TUBO QUADRO','0',NULL,'55','1050','55','40');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
-VALUES ('05990010','TONDO TRAFILATO','10',NULL,'10','10','10','10');
+VALUES ('05990010','TONDO TRAFILATO','0',NULL,'10','10','10','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
 VALUES ('05990020','TONDO TRAFILATO','5',NULL,'13','13','14','10');
 INSERT INTO Articolo (Codice, Descrizione, Quantità, Prezzo, Altezza, Larghezza, Profondità, Peso)
@@ -282,7 +285,6 @@ INSERT INTO Ordine(DataOrdine, Importo, Codice, Quantità)
 
 
 /*INSERIMENTO UBICAZIONI*/
-
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('1','09508080','10');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
@@ -331,7 +333,10 @@ INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('20','05990040','2');
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES ('21','05990040','1');
-
+INSERT INTO ubicazione(Locazione, Articolo, Quantita)
+VALUE (1,'30156001',10);
+INSERT INTO  ubicazione(Locazione, Articolo, Quantita)
+VALUE(1,'45150898',10);
 
 /* DOCUMENTO*/
 INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
