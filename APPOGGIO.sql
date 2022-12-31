@@ -1,9 +1,3 @@
-/* QUERY 43: Modifica importo documento.*/
-
-UPDATE Documento D
-SET D.Importo=1999
-WHERE D.Numero=3;
-
 /* QUERY 42: Inserimento nuovo documento.*/
 
 INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)

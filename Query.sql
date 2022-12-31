@@ -244,15 +244,20 @@ FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
 
-/* QUERY 39: Backup automatico.*/
+/* QUERY 39: Backup automatico */
 
-/* QUERY 40: Backup manuale.*/
+/* QUERY 40: Backup manuale */
 
-/* QUERY 41: Verifica del peso per ogni scaffale*/
+/* QUERY 41: Verifica del peso per ogni scaffale */
 SELECT PesoOccupato, CodiceScaffale
 FROM Locazione;
 
-/* QUERY 44: Visualizzazione documento.*/
+/* QUERY 43: Modifica importo documento */
+UPDATE Documento
+SET Importo = 1999
+WHERE Numero = 3;
+
+/* QUERY 44: Visualizzazione documento */
 -- Variante 1: visualizza documento in base al suo numero
 SELECT *
 FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
