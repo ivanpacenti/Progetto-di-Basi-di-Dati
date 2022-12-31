@@ -252,7 +252,19 @@ ORDER BY registrazione.Articolo;
 SELECT PesoOccupato, CodiceScaffale
 FROM Locazione;
 
-/* QUERY 47: Modifica locazione articolo.*/
+/* QUERY 46: Assegnamento articolo a locazione */
+START TRANSACTION;
+INSERT INTO Ubicazione(Locazione, Articolo, Quantita) VALUES(3, '05990010', 2)
+ON DUPLICATE KEY UPDATE
+  Quantita = Quantita + 2;
+UPDATE Locazione
+    SET PesoOccupato = PesoOccupato + ((SELECT Peso
+                                        FROM articolo
+                                        WHERE Codice = '05990010') * 2)
+WHERE CodiceScaffale = 3;
+COMMIT WORK;
+
+/* QUERY 47: Modifica locazione articolo */
 START TRANSACTION;
 UPDATE Ubicazione
 SET Ubicazione.Quantita = Ubicazione.Quantita - 50

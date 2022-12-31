@@ -1,8 +1,3 @@
-/* QUERY 46: Assegnamento articolo a locazione.*/
-
-INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES ('1', 'A', 'a', '1', '2');
-
 /* QUERY 45: Rimozione documento.*/
 
 DELETE FROM Stipulazione
