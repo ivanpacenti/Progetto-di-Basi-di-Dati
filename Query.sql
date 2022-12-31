@@ -252,6 +252,35 @@ ORDER BY registrazione.Articolo;
 SELECT PesoOccupato, CodiceScaffale
 FROM Locazione;
 
+/* QUERY 44: Visualizzazione documento.*/
+-- Variante 1: visualizza documento in base al suo numero
+SELECT *
+FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
+                 JOIN Fornitore F on F.Codice = R.Fornitore
+WHERE Numero = 3;
+-- Variante 2: visualizza documento contenente articoli forniti da un dato fornitore
+SELECT *
+FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
+                 JOIN Fornitore F on F.Codice = R.Fornitore
+WHERE F.RagioneSociale='GIANLUCHINI';
+-- Variante 3: visualizza documenti con importo superiore ad un certo numero
+SELECT *
+FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
+                 JOIN Fornitore F on F.Codice = R.Fornitore
+WHERE D.Importo>10000;
+
+/* QUERY 45: Rimozione documento */
+START TRANSACTION;
+DELETE FROM Stipulazione
+WHERE Documento = 1;
+DELETE FROM Registrazione
+WHERE Documento = 1;
+SET FOREIGN_KEY_CHECKS = 0; -- DISABILITO CONTROLLO CHIAVI ESTERNE, SENNÒ NON MI FA ELIMINARE: È SAFE PERCHÉ LE CHIAVI ESTERNE LE HO ELIMINATE PRIMA
+DELETE FROM Documento
+WHERE Numero = 1;
+SET FOREIGN_KEY_CHECKS=1; -- LO RIABILITO
+COMMIT WORK;
+
 /* QUERY 46: Assegnamento articolo a locazione */
 START TRANSACTION;
 INSERT INTO Ubicazione(Locazione, Articolo, Quantita) VALUES(3, '05990010', 2)
