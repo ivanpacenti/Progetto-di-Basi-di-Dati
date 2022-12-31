@@ -83,14 +83,10 @@ CREATE TABLE SediClienti(
     Civico INTEGER NOT NULL,
     Comune VARCHAR(25) NOT NULL);
 
-
-
 CREATE TABLE RubricaF(
     Fornitore INTEGER NOT NULL,
     FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
     Contatto VARCHAR(40) PRIMARY KEY);
-
-
 
 CREATE TABLE RubricaC(
     Cliente INTEGER NOT NULL,
@@ -105,7 +101,7 @@ CREATE TABLE Documento(
     TipoDocumento VARCHAR(10) NOT NULL);
 
 CREATE TABLE Stipulazione(
-    Cliente INTEGER NOT NULL,
+    Cliente INTEGER,
     FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
     Documento INTEGER NOT NULL,
     FOREIGN KEY (Cliente) REFERENCES Documento(Numero));
@@ -137,7 +133,7 @@ CREATE TABLE Fabbricazione(
     FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa));
 
 CREATE TABLE Richiesta(
-    Cliente INTEGER NOT NULL,
+    Cliente INTEGER,
     FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
     Ordine INTEGER NOT NULL,
     FOREIGN KEY (Ordine) REFERENCES Ordine(Numero));
