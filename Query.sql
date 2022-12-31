@@ -264,10 +264,21 @@ FROM distinta
 WHERE ArticoloDiRiferimento='05990030';
 
 /* QUERY 36: Modifica quantità articolo in distinta */
-
+UPDATE DettaglioDistinta
+SET Quantità = 2
+WHERE Distinta = '09680200' AND Articolo = '05990010';
 
 /* QUERY 37: Rimozione dati distinta */
-
+START TRANSACTION;
+DELETE FROM DettaglioDistinta
+WHERE Distinta = '09680200';
+DELETE FROM DettaglioCicli
+WHERE Distinta = '09680200';
+SET FOREIGN_KEY_CHECKS = 0;
+DELETE FROM Distinta
+WHERE ArticoloDiRiferimento = '05990010';
+SET FOREIGN_KEY_CHECKS = 1;
+COMMIT WORK;
 
 /* QUERY 38: Comparazione corrispondenza articoli tra fattura e DDT */
 SELECT Documento, Articolo, Quantità
