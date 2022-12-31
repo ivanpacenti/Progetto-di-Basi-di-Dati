@@ -40,10 +40,11 @@ CREATE TABLE Ciclo(
     Tipologia VARCHAR(20) PRIMARY KEY);
 
 CREATE TABLE DettaglioCicli(
+    UNIQUE (Distinta,Ciclo),
     Distinta VARCHAR(8) NOT NULL,
-    FOREIGN KEY (Distinta) REFERENCES Distinta(ArticoloDiRiferimento),
     Ciclo VARCHAR(20) NOT NULL,
-    FOREIGN KEY (Ciclo) REFERENCES Ciclo(Tipologia));
+    FOREIGN KEY (Ciclo) REFERENCES Ciclo(Tipologia),
+    FOREIGN KEY (Distinta) REFERENCES Distinta(ArticoloDiRiferimento));
 
 CREATE TABLE Commessa(
     CodiceCommessa INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -102,9 +103,10 @@ CREATE TABLE Documento(
 
 CREATE TABLE Stipulazione(
     Cliente INTEGER,
-    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
+    UNIQUE (Cliente,Documento),
     Documento INTEGER NOT NULL,
-    FOREIGN KEY (Cliente) REFERENCES Documento(Numero));
+    FOREIGN KEY (Cliente) REFERENCES Documento(Numero),
+    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice));
 
 CREATE TABLE MacchinaInLavorazione(
     Matricola INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -112,28 +114,33 @@ CREATE TABLE MacchinaInLavorazione(
 
 CREATE TABLE Composizione(
     MacchinaInLavorazione INTEGER NOT NULL,
-    FOREIGN KEY (MacchinaInLavorazione) REFERENCES MacchinaInLavorazione(Matricola),
     Articolo VARCHAR(8) NOT NULL,
+    UNIQUE(MacchinaInLavorazione,Articolo),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
+    FOREIGN KEY (MacchinaInLavorazione) REFERENCES MacchinaInLavorazione(Matricola),
     Quantità INTEGER NOT NULL);
 
 CREATE TABLE Registrazione(
+
     Articolo VARCHAR(8) NOT NULL,
-    FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
     Fornitore INTEGER,
-    FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
     Documento INTEGER NOT NULL,
+    UNIQUE (Documento,Articolo,Fornitore),
     FOREIGN KEY (Documento) REFERENCES Documento(Numero),
+    FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
+    FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
     Quantità INTEGER NOT NULL);
 
 CREATE TABLE Fabbricazione(
     MacchinaInLavorazione INTEGER NOT NULL,
-    FOREIGN KEY (MacchinaInLavorazione) REFERENCES  MacchinaInLavorazione(Matricola) ,
+    UNIQUE (Commessa, MacchinaInLavorazione),
     Commessa INTEGER NOT NULL,
-    FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa));
+    FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa),
+    FOREIGN KEY (MacchinaInLavorazione) REFERENCES  MacchinaInLavorazione(Matricola) );
 
 CREATE TABLE Richiesta(
     Cliente INTEGER,
-    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice),
+    UNIQUE (Ordine,Cliente),
     Ordine INTEGER NOT NULL,
-    FOREIGN KEY (Ordine) REFERENCES Ordine(Numero));
+    FOREIGN KEY (Ordine) REFERENCES Ordine(Numero),
+    FOREIGN KEY (Cliente) REFERENCES Cliente(Codice));
