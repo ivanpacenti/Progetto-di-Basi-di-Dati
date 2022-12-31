@@ -29,10 +29,11 @@ CREATE TABLE Distinta(
     ArticoloDiRiferimento VARCHAR(8) NOT NULL PRIMARY KEY );
 
 CREATE TABLE DettaglioDistinta(
-    Distinta VARCHAR(8) NOT NULL,
-    FOREIGN KEY (Distinta)  REFERENCES Distinta(ArticoloDiRiferimento),
     Quantità INTEGER NOT NULL,
     Articolo VARCHAR (8) NOT NULL,
+    Distinta VARCHAR(8) NOT NULL,
+    UNIQUE(Articolo, Distinta),
+    FOREIGN KEY (Distinta)  REFERENCES Distinta(ArticoloDiRiferimento),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice));
 
 CREATE TABLE Ciclo(
