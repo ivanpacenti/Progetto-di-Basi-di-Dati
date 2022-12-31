@@ -251,3 +251,41 @@ ORDER BY registrazione.Articolo;
 /* QUERY 41: Verifica del peso per ogni scaffale*/
 SELECT PesoOccupato, CodiceScaffale
 FROM Locazione;
+
+/* QUERY 47: Modifica locazione articolo.*/
+START TRANSACTION;
+UPDATE Ubicazione
+SET Ubicazione.Quantita = Ubicazione.Quantita - 50
+WHERE Articolo = '04543000' AND Locazione = 3;
+UPDATE Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
+SET PesoOccupato = PesoOccupato - ((SELECT Peso
+                                    FROM Articolo
+                                    WHERE Codice = '04543000') * 50)
+WHERE CodiceScaffale = 3;
+UPDATE Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
+SET PesoOccupato = PesoOccupato + ((SELECT Peso
+                                    FROM Articolo
+                                    WHERE Codice = '04543000') * 50)
+WHERE CodiceScaffale = 4;
+INSERT INTO Ubicazione(Locazione, Articolo, Quantita) VALUES(4, '04543000', 50)
+ON DUPLICATE KEY UPDATE
+  Quantita = Quantita + 50;
+DELETE FROM Ubicazione
+WHERE Ubicazione.Quantita = 0 AND Locazione = 3;
+COMMIT WORK;
+
+/* QUERY 48: Visualizzazione locazione articolo */
+SELECT Sezione, RigaScaff, ColonnaScaff, Quantita
+FROM Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
+WHERE Articolo = '04126300';
+
+/* QUERY 49: Rimozione articolo da locazione */
+START TRANSACTION;
+UPDATE Locazione l JOIN Ubicazione u ON l.CodiceScaffale = u.Locazione
+SET PesoOccupato = PesoOccupato - ((SELECT Peso
+                                   FROM Articolo
+                                   WHERE Codice = '04543000') * u.Quantita)
+WHERE u.Articolo = '04543000' AND u.Locazione = 3;
+DELETE FROM Ubicazione
+WHERE Ubicazione.Articolo = '04543000' AND Ubicazione.Locazione = 3;
+COMMIT WORK;

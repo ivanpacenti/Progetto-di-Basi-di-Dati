@@ -1,6 +1,6 @@
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
-    PesoOccupato FLOAT NOT NULL,
+    PesoOccupato FLOAT NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
     Sezione CHAR(1) NOT NULL,
     Scaffalatura CHAR(1) NOT NULL,
     RigaScaff INTEGER NOT NULL,
@@ -17,9 +17,10 @@ CREATE TABLE Articolo(
     Peso FLOAT NOT NULL);
 
 CREATE TABLE Ubicazione(
-    Locazione INTEGER NOT NULL ,
-    Articolo VARCHAR(8)  NOT NULL ,
-    Quantita INTEGER NOT NULL,
+    Locazione INTEGER NOT NULL,
+    Articolo VARCHAR(8)  NOT NULL,
+    Quantita INTEGER NOT NULL CHECK (Quantita >= 0),
+    UNIQUE(Locazione, Articolo),
     FOREIGN KEY (Locazione) REFERENCES Locazione(CodiceScaffale),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice));
 
