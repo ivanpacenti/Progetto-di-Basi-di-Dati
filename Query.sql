@@ -36,18 +36,20 @@ FROM Commessa c JOIN Fabbricazione f ON c.CodiceCommessa = f.Commessa
 WHERE CodiceCommessa = 4;
 
 /* QUERY 8: Rimozione commessa di lavorazione */
+START TRANSACTION;
+UPDATE Fabbricazione
+SET Commessa = NULL
+WHERE Commessa = 1;
 DELETE FROM Commessa
 WHERE CodiceCommessa = 1;
+COMMIT WORK;
 
 /* QUERY 9: Inserimento nuovo ordine */
 START TRANSACTION;
 INSERT INTO Ordine(dataordine, importo, codice, quantità)
     VALUE('2022-11-30', 13000, '09412050', 1);
 INSERT INTO Richiesta(Cliente, Ordine)
-    SELECT 3, Numero
-    FROM Ordine
-    ORDER BY Numero DESC
-    LIMIT 1;
+    VALUES(3, LAST_INSERT_ID());
 COMMIT WORK;
 
 /* QUERY 10: Modifica ordine */
@@ -123,32 +125,37 @@ INSERT INTO Articolo(codice, descrizione, quantità, prezzo, altezza, larghezza
 
 /* QUERY 20: Visualizza dati articolo */
 SELECT *
-FROM articolo
-WHERE articolo.Codice='09645326';
+FROM Articolo
+WHERE Codice='09645326';
 
 /* QUERY 21: Modifica peso articolo */
 START TRANSACTION;
+UPDATE Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
+SET PesoOccupato = PesoOccupato - ((SELECT Peso
+                                   FROM Articolo
+                                   WHERE Codice = '05990030') * u.Quantita)
+WHERE u.Articolo = '05990030'; -- Sottrai dal peso occupato il peso che occupa quell'articolo attualmente
 UPDATE Articolo
 SET Peso = 15
-WHERE Codice = '05990030';
-UPDATE Locazione JOIN Ubicazione ON Ubicazione.Locazione = Locazione.CodiceScaffale
-SET PesoOccupato = PesoOccupato - ((SELECT Peso
+WHERE Codice = '05990030'; -- Imposta il nuovo peso
+UPDATE Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
+SET PesoOccupato = PesoOccupato + ((SELECT Peso
                                    FROM Articolo
-                                   WHERE Codice = '05990030') * Ubicazione.Quantita)
-WHERE Ubicazione.Articolo = '05990030';
+                                   WHERE Codice = '05990030') * u.Quantita)
+WHERE u.Articolo = '05990030'; -- Aggiungi il nuovo peso a peso occupato
 COMMIT WORK;
 
-/* QUERY 22: Rimozione dati articolo */
+/* QUERY 22: Rimozione articolo */
 START TRANSACTION;
-UPDATE Locazione JOIN Ubicazione ON Ubicazione.Locazione = Locazione.CodiceScaffale
+UPDATE Locazione l JOIN Ubicazione u ON u.Locazione = l.CodiceScaffale
 SET PesoOccupato = PesoOccupato - ((SELECT Peso
                                    FROM Articolo
-                                   WHERE Codice = '04427000') * Ubicazione.Quantita)
-WHERE Ubicazione.Articolo = '04427000';
+                                   WHERE Codice = '04427000') * u.Quantita)
+WHERE u.Articolo = '04427000';
 DELETE FROM Ubicazione
-WHERE Ubicazione.Articolo = '04427000';
+WHERE Articolo = '04427000';
 DELETE FROM Articolo
-WHERE Codice='09645326';
+WHERE Codice = '09645326';
 COMMIT WORK;
 
 /* QUERY 23: Visualizzazione articoli in una specifica locazione */
@@ -156,8 +163,12 @@ SELECT Locazione.CodiceScaffale, a.Codice, a.Descrizione, u.Quantita
 FROM Locazione JOIN ubicazione u on locazione.CodiceScaffale = u.Locazione JOIN articolo a on u.Articolo = a.Codice
 WHERE Locazione.CodiceScaffale = 1;
 
-/* QUERY 24: Calcolo spese commessa di lavorazione */
-
+/* QUERY 24: Calcolo del profitto di una commessa di lavorazione */
+SELECT SUM(Prezzo)
+FROM Commessa c JOIN Fabbricazione f ON c.CodiceCommessa = f.Commessa
+                JOIN MacchinaInLavorazione m ON f.MacchinaInLavorazione = m.Matricola
+                JOIN Articolo a ON m.Codice = a.Codice
+WHERE Commessa = 4;
 
 /* QUERY 25: Inserimento dati e operazioni DDT */
 
@@ -182,22 +193,36 @@ FROM Fornitore f JOIN RubricaF r ON r.Fornitore = f.Codice JOIN SediFornitori s 
 WHERE f.Codice = 2;
 
 /* QUERY 28: Modifica dati fornitore */
-UPDATE fornitore
-SET fornitore.RagioneSociale='prova'
-WHERE fornitore.Codice=1;
+-- Variante 1: Modifica ragione sociale di un fornitore
+UPDATE Fornitore
+SET RagioneSociale = 'FILI.COM'
+WHERE RagioneSociale = 'FILI.IT';
+-- Variante 2: Modifica partita IVA di un fornitore
+UPDATE Fornitore
+SET PartitaIVA = '50496876299'
+WHERE PartitaIVA = '50496876298';
 
 /* QUERY 29: Rimozione dati fornitore */
-DELETE FROM fornitore
-where Fornitore.codice= 2;
+START TRANSACTION;
+UPDATE Registrazione
+SET Fornitore = NULL
+WHERE Fornitore = 2;
+DELETE FROM RubricaF
+WHERE Fornitore = 2;
+DELETE FROM SediFornitori
+WHERE Fornitore = 2;
+DELETE FROM Fornitore
+WHERE Codice = 2;
+COMMIT WORK;
 
 /* QUERY 30: Inserimento nuovo cliente */
-INSERT INTO cliente(ragionesociale, partitaiva)
+INSERT INTO Cliente(RagioneSociale, PartitaIVA)
     VALUES('prova', '2130401310');
 
 /* QUERY 31: Visualizza dati cliente */
 SELECT *
-from fornitore
-where Codice=1;
+from Cliente
+where Codice = 1;
 
 /* QUERY 32: Modifica dati cliente */
 -- Variante 1: Modifica ragione sociale di un cliente
@@ -209,7 +234,7 @@ UPDATE Cliente
 SET PartitaIVA='27776820634'
 WHERE PartitaIVA='03947264857';
 
-/* QUERY 33: Elimina dati cliente */
+/* QUERY 33: Rimozione dati cliente */
 START TRANSACTION;
 UPDATE Stipulazione
 SET Cliente = NULL
@@ -278,19 +303,19 @@ WHERE Numero = 3;
 /* QUERY 44: Visualizzazione documento */
 -- Variante 1: visualizza documento in base al suo numero
 SELECT *
-FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
-                 JOIN Fornitore F on F.Codice = R.Fornitore
+FROM Documento d JOIN Registrazione r on d.Numero = r.Documento
+                 JOIN Fornitore f on f.Codice = r.Fornitore
 WHERE Numero = 3;
 -- Variante 2: visualizza documento contenente articoli forniti da un dato fornitore
 SELECT *
-FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
-                 JOIN Fornitore F on F.Codice = R.Fornitore
-WHERE F.RagioneSociale='GIANLUCHINI';
+FROM Documento d JOIN Registrazione r on d.Numero = r.Documento
+                 JOIN Fornitore f on f.Codice = r.Fornitore
+WHERE F.RagioneSociale = 'GIANLUCHINI';
 -- Variante 3: visualizza documenti con importo superiore ad un certo numero
 SELECT *
-FROM Documento D JOIN Registrazione R on D.Numero = R.Documento
-                 JOIN Fornitore F on F.Codice = R.Fornitore
-WHERE D.Importo>10000;
+FROM Documento d JOIN Registrazione r on d.Numero = r.Documento
+                 JOIN Fornitore f on f.Codice = r.Fornitore
+WHERE D.Importo > 10000;
 
 /* QUERY 45: Rimozione documento */
 START TRANSACTION;
