@@ -192,7 +192,7 @@ where Fornitore.codice= 2;
 
 /* QUERY 30: Inserimento nuovo cliente */
 INSERT INTO cliente(ragionesociale, partitaiva)
-    VALUE();
+    VALUES('prova', '2130401310');
 
 /* QUERY 31: Visualizza dati cliente */
 SELECT *
@@ -209,9 +209,21 @@ UPDATE Cliente
 SET PartitaIVA='27776820634'
 WHERE PartitaIVA='03947264857';
 
-/* QUERY 33: Elimina dati clienti */
+/* QUERY 33: Elimina dati cliente */
+START TRANSACTION;
+UPDATE Stipulazione
+SET Cliente = NULL
+WHERE Cliente = 2;
+UPDATE Richiesta
+SET Cliente = NULL
+WHERE Cliente = 2;
+DELETE FROM RubricaC
+WHERE Cliente = 2;
+DELETE FROM SediClienti
+WHERE Cliente = 2;
 DELETE FROM Cliente
-WHERE Cliente.codice = 2;
+WHERE Codice = 2;
+COMMIT WORK;
 
 /*QUERY 34: Inserimento nuova distinta. */
 START TRANSACTION;
@@ -226,14 +238,14 @@ SELECT *
 FROM distinta
 WHERE ArticoloDiRiferimento='05990030';
 
-/* QUERY 36: Modifica dati distinta */
+/* QUERY 36: Modifica quantità articolo in distinta */
 
 
 /* QUERY 37: Rimozione dati distinta */
 
 
-/* QUERY 38: Comparazione tra fatture e DDT */
-SELECT Registrazione.Documento, Registrazione.Articolo, Registrazione.Quantità
+/* QUERY 38: Comparazione corrispondenza articoli tra fattura e DDT */
+SELECT Documento, Articolo, Quantità
 FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
@@ -289,7 +301,7 @@ WHERE Documento = 1;
 SET FOREIGN_KEY_CHECKS = 0; -- DISABILITO CONTROLLO CHIAVI ESTERNE, SENNÒ NON MI FA ELIMINARE: È SAFE PERCHÉ LE CHIAVI ESTERNE LE HO ELIMINATE PRIMA
 DELETE FROM Documento
 WHERE Numero = 1;
-SET FOREIGN_KEY_CHECKS=1; -- LO RIABILITO
+SET FOREIGN_KEY_CHECKS = 1; -- LO RIABILITO
 COMMIT WORK;
 
 /* QUERY 46: Assegnamento articolo a locazione */
