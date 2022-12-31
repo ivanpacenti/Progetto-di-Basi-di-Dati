@@ -134,7 +134,7 @@ CREATE TABLE Registrazione(
 CREATE TABLE Fabbricazione(
     MacchinaInLavorazione INTEGER NOT NULL,
     UNIQUE (Commessa, MacchinaInLavorazione),
-    Commessa INTEGER NOT NULL,
+    Commessa INTEGER,
     FOREIGN KEY (Commessa) REFERENCES Commessa(CodiceCommessa),
     FOREIGN KEY (MacchinaInLavorazione) REFERENCES  MacchinaInLavorazione(Matricola) );
 
