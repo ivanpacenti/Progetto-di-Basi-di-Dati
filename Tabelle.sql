@@ -99,7 +99,7 @@ CREATE TABLE Documento(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
     DatiPagamento VARCHAR(30) NOT NULL,
     DataDocumento DATE NOT NULL,
-    Importo INTEGER NOT NULL CHECK (Importo > 0),
+    Importo INTEGER NOT NULL CHECK (Importo >= 0),
     TipoDocumento VARCHAR(10) NOT NULL CHECK (TipoDocumento = 'DDT' OR TipoDocumento = 'Fattura'));
 
 CREATE TABLE Stipulazione(
