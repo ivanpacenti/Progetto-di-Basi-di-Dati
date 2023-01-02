@@ -201,6 +201,19 @@ END;
         in Locazione deve essere pari alla somma
         dei pesi degli articoli contenuti in quella locazione. */
 
+/*
+ ====================== IMPORTANTE ======================
+ Questo trigger, in alcuni casi, non funziona. Questo è
+ dovuto dai calcoli con precisione errata che effettua
+ SQL con i numeri decimali. Per questo motivo è meglio
+ non lanciare questo trigger per fare dei test con il
+ database. Tuttavia, a livello logico, questo vincolo
+ è corretto, il problema è solo la precisione dei numeri
+ decimali. Anche utilizzando varie funzioni e tipi di dato
+ SQL non abbiamo trovato il modo di risolvere questo
+ problema, purtroppo. :(
+ */
+
 CREATE TRIGGER PesoOccupatoNonCorretto
 BEFORE UPDATE ON Locazione
 FOR EACH ROW
