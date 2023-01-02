@@ -70,86 +70,85 @@ VALUES ('05990040','TONDO TRAFILATO', 3, NULL, 20, 40, 40, 20);
 
 /*distinta materie prime*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','06990000');
+VALUES (0,'06990000');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','06990002');
+VALUES (0,'06990002');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','06990003');
+VALUES (0,'06990003');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','05990010');
+VALUES (0,'05990010');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','05990020');
+VALUES (0,'05990020');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','05990030');
+VALUES (0,'05990030');
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('0','05990040');
+VALUES (0,'05990040');
 
 /*distinta roboklin 25*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('2','09508080');
+VALUES (2,'09508080');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09508080','2','55141618');
+VALUES ('09508080',2,'55141618');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09508080','4','06990000');
+VALUES ('09508080',4,'06990000');
 /*distinta CTL 45*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('4','09203999');
+VALUES (4,'09203999');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09203999','1','55030790');
+VALUES ('09203999',1,'55030790');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09203999','1','55181768');
+VALUES ('09203999',1,'55181768');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09203999','2','30152800');
+VALUES ('09203999',2,'30152800');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09203999','1','45157808');
+VALUES ('09203999',1,'45157808');
 /*distinta MINI-ESCAVATORE M18DS*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('3','09782020');
+VALUES (3,'09782020');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09782020','1','55030450');
+VALUES ('09782020',1,'55030450');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09782020','1','30156001');
+VALUES ('09782020',1,'30156001');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09782020','4','06990002');
+VALUES ('09782020',4,'06990002');
 /*distinta MINI-ESCAVATORE M38U*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('4','09680200');
+VALUES (4,'09680200');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09680200','1','55030460');
+VALUES ('09680200',1,'55030460');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09680200','2','55089090');
+VALUES ('09680200',2,'55089090');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09680200','4','06990003');
+VALUES ('09680200',4,'06990003');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09680200','4','05990010');
+VALUES ('09680200',4,'05990010');
 /*distinta MINI-DUMPER TC50-e*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('3','09576488');
+VALUES (3,'09576488');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09576488','1','55037000');
+VALUES ('09576488',1,'55037000');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09576488','1','30156001');
+VALUES ('09576488',1,'30156001');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('09576488','4','05990030');
+VALUES ('09576488',4,'05990030');
 /*distinta TELAIO SOTTOCARRO CTL45*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('3','55181768');
+VALUES (3,'55181768');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('55181768','4','05990020');
+VALUES ('55181768',4,'05990020');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('55181768','4','05990030');
+VALUES ('55181768',4,'05990030');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('55181768','4','05990040');
+VALUES ('55181768',4,'05990040');
 /*distinta BENNA CTL45*/
 INSERT INTO Distinta(NumeroArticoli, ArticoloDiRiferimento)
-VALUES ('3','45157808');
+VALUES (3,'45157808');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('45157808','4','05990020');
+VALUES ('45157808',4,'05990020');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('45157808','4','05990030');
+VALUES ('45157808',4,'05990030');
 INSERT INTO DettaglioDistinta(Distinta, Quantità, Articolo)
-VALUES ('45157808','4','05990040');
-
+VALUES ('45157808',4,'05990040');
 
 
 /*INSERIMENTO POSTI LOCAZIONE */
