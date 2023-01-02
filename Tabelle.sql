@@ -158,7 +158,7 @@ CREATE TRIGGER QuantitaUbicazioniNonCorrette
 BEFORE INSERT ON Ubicazione
 FOR EACH ROW
 BEGIN
-    IF ((SELECT IF(SUM(u.Quantita) = SUM(a.Quantità), 1, 0) AS CheckQuantità
+    IF ((SELECT IF(SUM(u.Quantita) <= SUM(a.Quantità), 1, 0) AS CheckQuantità
          FROM Articolo a JOIN Ubicazione u ON a.Codice = u.Articolo) = 0) THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'La quantità di almeno un articolo in Ubicazione è superiore alla giacenza dello stesso articolo.';
