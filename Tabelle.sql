@@ -49,7 +49,8 @@ CREATE TABLE DettaglioCicli(
 CREATE TABLE Commessa(
     CodiceCommessa INTEGER PRIMARY KEY AUTO_INCREMENT,
     DataInizio DATE NOT NULL,
-    DataFine DATE NOT NULL CHECK (DataFine >= DataInizio));
+    DataFine DATE NOT NULL,
+    CHECK (DataFine >= DataInizio));
 
 CREATE TABLE Ordine(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
