@@ -1,11 +1,8 @@
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
     PesoOccupato DOUBLE NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
-    Sezione CHAR(1) NOT NULL CHECK (Sezione = 'A' OR Sezione = 'B'),
-    Scaffalatura CHAR(1) NOT NULL CHECK (Scaffalatura = 'a' OR Scaffalatura = 'b'
-                                      OR Scaffalatura = 'c' OR Scaffalatura = 'd'
-                                      OR Scaffalatura = 'e' OR Scaffalatura = 'f'
-                                      OR Scaffalatura = 'g' OR Scaffalatura = 'h'),
+    Sezione CHAR(1) NOT NULL CHECK (Sezione LIKE '[A-C]'),
+    Scaffalatura CHAR(1) NOT NULL CHECK (Scaffalatura LIKE '[a-h]'),
     RigaScaff INTEGER NOT NULL CHECK (RigaScaff >= 1 AND RigaScaff <= 4),
     ColonnaScaff INTEGER NOT NULL CHECK (ColonnaScaff >= 1 AND ColonnaScaff <= 5));
 
@@ -146,3 +143,72 @@ CREATE TABLE Richiesta(
     Ordine INTEGER NOT NULL,
     FOREIGN KEY (Ordine) REFERENCES Ordine(Numero),
     FOREIGN KEY (Cliente) REFERENCES Cliente(Codice));
+
+
+-- VINCOLI INTER-RELAZIONALI
+
+
+/* RD1: La somma di tutti gli attributi "Quantità" relativi
+        ad un codice articolo in Ubicazione deve essere pari
+        al valore dell'attributo "Quantità" in Articolo. */
+
+CREATE TRIGGER QuantitaUbicazioniNonCorrette
+BEFORE INSERT ON Ubicazione
+FOR EACH ROW
+BEGIN
+    IF ((SELECT IF(SUM(u.Quantita) = SUM(a.Quantità), 1, 0) AS CheckQuantità
+         FROM Articolo a JOIN Ubicazione u ON a.Codice = u.Articolo) = 0) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'La quantità di almeno un articolo in Ubicazione è superiore alla giacenza dello stesso articolo.';
+    END IF;
+END;
+
+
+/* RD2: L'attributo "Codice" relativo all'entità Ordine
+        deve essere un codice presente nella tabella Articolo
+        e deve iniziare con "09". */
+
+CREATE TRIGGER CodiceOrdineNonCorretto
+BEFORE INSERT ON Ordine
+FOR EACH ROW
+BEGIN
+    IF (NEW.Codice NOT IN (SELECT Codice
+                           FROM Articolo
+                           WHERE Codice LIKE '09______')) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'L\'articolo che si sta inserendo nell\'ordine non corrisponde ad una macchina.';
+    END IF;
+END;
+
+
+/* RD3: L'attributo "Codice" relativo all'entità Macchina in Lavorazione
+        deve essere un codice presente nella tabella Articolo
+        e deve iniziare con "09". */
+
+CREATE TRIGGER CodiceMacchinaNonCorretto
+BEFORE INSERT ON MacchinaInLavorazione
+FOR EACH ROW
+BEGIN
+    IF (NEW.Codice NOT IN (SELECT Codice
+                           FROM Articolo
+                           WHERE Codice LIKE '09______')) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'L\'articolo che si sta inserendo come macchina in lavorazione non corrisponde ad una macchina.';
+    END IF;
+END;
+
+/* RD4: Il valore dell'attributo "Peso occupato"
+        in Locazione deve essere pari alla somma
+        dei pesi degli articoli contenuti in quella locazione. */
+
+CREATE TRIGGER PesoOccupatoNonCorretto
+BEFORE UPDATE ON Locazione
+FOR EACH ROW
+BEGIN
+    IF (NEW.PesoOccupato != (SELECT SUM(TRUNCATE(a.Peso * u.Quantita, 3))
+                             FROM Articolo a JOIN Ubicazione u ON a.Codice = u.Articolo
+                             WHERE u.Locazione = 8)) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Il peso occupato non corrisponde con la somma dei pesi degli articoli contenuti in questa locazione';
+    END IF;
+END;
