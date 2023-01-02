@@ -154,7 +154,7 @@ VALUES ('45157808','4','05990040');
 
 /*INSERIMENTO POSTI LOCAZIONE */
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
-VALUES (0,'C','0','0','0');
+VALUES (0,'C','a','1','1');
 /*2*/
 INSERT INTO Locazione(PesoOccupato, Sezione, Scaffalatura, RigaScaff, ColonnaScaff)
 VALUES (20,'A','a','1','1');
