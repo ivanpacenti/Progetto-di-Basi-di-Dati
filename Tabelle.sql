@@ -149,8 +149,8 @@ CREATE TABLE Richiesta(
 
 
 /* RD1: La somma di tutti gli attributi "Quantità" relativi
-        ad un codice articolo in Ubicazione deve essere pari
-        al valore dell'attributo "Quantità" in Articolo. */
+        ad un codice articolo in Ubicazione deve essere minore
+        o uguale al valore dell'attributo "Quantità" in Articolo. */
 
 CREATE TRIGGER QuantitaUbicazioniNonCorrette
 BEFORE INSERT ON Ubicazione
