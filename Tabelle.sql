@@ -12,7 +12,7 @@ CREATE TABLE Articolo(
     Quantità INTEGER NOT NULL,
     Prezzo INTEGER,
     Altezza DOUBLE NOT NULL CHECK (Altezza > 0),
-    Larghezza DOUBLE NOT NULL CHECK (Profondità > 0),
+    Larghezza DOUBLE NOT NULL CHECK (Larghezza > 0),
     Profondità DOUBLE NOT NULL CHECK (Profondità > 0),
     Peso DOUBLE NOT NULL CHECK (Peso > 0));
 
