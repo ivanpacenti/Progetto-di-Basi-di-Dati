@@ -1,8 +1,8 @@
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
     PesoOccupato DOUBLE NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
-    Sezione CHAR(1) NOT NULL CHECK (Sezione LIKE '[A-C]'),
-    Scaffalatura CHAR(1) NOT NULL CHECK (Scaffalatura LIKE '[a-h]'),
+    Sezione CHAR(1) NOT NULL CHECK (Sezione REGEXP 'A|B|C'),
+    Scaffalatura CHAR(1) NOT NULL CHECK (Scaffalatura REGEXP 'a|b|c|d|e|f|g|h'),
     RigaScaff INTEGER NOT NULL CHECK (RigaScaff >= 1 AND RigaScaff <= 4),
     ColonnaScaff INTEGER NOT NULL CHECK (ColonnaScaff >= 1 AND ColonnaScaff <= 5));
 
@@ -100,7 +100,8 @@ CREATE TABLE Documento(
     DatiPagamento VARCHAR(30) NOT NULL,
     DataDocumento DATE NOT NULL,
     Importo INTEGER NOT NULL CHECK (Importo >= 0),
-    TipoDocumento VARCHAR(10) NOT NULL CHECK (TipoDocumento = 'DDT' OR TipoDocumento = 'Fattura'));
+    TipoDocumento VARCHAR(10) NOT NULL,
+    CHECK (TipoDocumento = 'DDT' OR TipoDocumento = 'Fattura'));
 
 CREATE TABLE Stipulazione(
     Cliente INTEGER,
