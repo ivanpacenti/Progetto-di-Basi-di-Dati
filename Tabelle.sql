@@ -155,11 +155,12 @@ CREATE TABLE Richiesta(
         o uguale al valore dell'attributo "Quantità" in Articolo. */
 
 CREATE TRIGGER QuantitaUbicazioniNonCorrette
-BEFORE INSERT ON Ubicazione
+AFTER INSERT ON Ubicazione
 FOR EACH ROW
 BEGIN
-    IF ((SELECT IF(SUM(u.Quantita) <= SUM(a.Quantità), 1, 0) AS CheckQuantità
-         FROM Articolo a JOIN Ubicazione u ON a.Codice = u.Articolo) = 0) THEN
+    IF (SELECT MIN(CheckQuantità) FROM (SELECT IF(SUM(u.Quantita) <= SUM(a.Quantità), 1, 0) AS CheckQuantità
+                   FROM Articolo a JOIN Ubicazione u ON a.Codice = u.Articolo
+                   GROUP BY ARTICOLO) AS Prova) = 0 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'La quantità di almeno un articolo in Ubicazione è superiore alla giacenza dello stesso articolo.';
     END IF;
@@ -227,3 +228,5 @@ BEGIN
         SET MESSAGE_TEXT = 'Il peso occupato non corrisponde con la somma dei pesi degli articoli contenuti in questa locazione';
     END IF;
 END;
+
+DROP TRIGGER PesoOccupatoNonCorretto
