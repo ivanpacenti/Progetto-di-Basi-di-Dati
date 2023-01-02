@@ -91,7 +91,7 @@ SELECT *
 FROM Commessa
 WHERE DataInizio > '2022-07-15' AND DataFine < '2022-10-28';
 
-/* QUERY 16: Consultazione degli Articoli presenti in magazzino */
+/* QUERY 16: Consultazione degli Articoli con quantità positiva */
 SELECT Codice, Descrizione, Quantità
 FROM Articolo
 WHERE Articolo.Quantità > 0;
@@ -289,19 +289,24 @@ FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
 
-/* QUERY 39: Visualizza locazioni vuote */
+/* QUERY 39: Visualizza articoli con quantità positiva ma senza ubicazione */
 SELECT *
-FROM Locazione
-WHERE PesoOccupato = 0;
+FROM Articolo
+WHERE Codice NOT IN (SELECT Articolo
+                     FROM Ubicazione) AND Quantità>0;
 
-/* QUERY 40: Visualizza locazioni in ordine crescente di peso occupato */
-SELECT *
-FROM Locazione
-ORDER BY PesoOccupato;
+/* QUERY 40: Visualizza documenti contenenti un dato articolo e i clienti corrispondenti */
+SELECT d.Numero, c.RagioneSociale, c.PartitaIVA, d.DatiPagamento, d.DataDocumento, d.Importo, d.TipoDocumento
+FROM Documento d JOIN Stipulazione s ON d.Numero = s.Documento
+                 JOIN Cliente c ON s.Cliente = c.Codice
+WHERE d.Numero IN (SELECT Documento
+                   FROM Registrazione
+                   WHERE Articolo = '05990010');
 
 /* QUERY 41: Verifica del peso per ogni scaffale */
-SELECT PesoOccupato, CodiceScaffale
-FROM Locazione;
+SELECT CodiceScaffale, Sezione, Scaffalatura, RigaScaff, ColonnaScaff, PesoOccupato
+FROM Locazione
+WHERE Sezione != 'C';
 
 /* QUERY 42: Inserimento nuovo documento */
 START TRANSACTION;
@@ -396,16 +401,3 @@ WHERE u.Articolo = '04543000' AND u.Locazione = 3;
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo = '04543000' AND Ubicazione.Locazione = 3;
 COMMIT WORK;
-
--- QUERY PER VEDERE GLI ARTICOLI CON QUANTITà CHE NON SONO PRESENTI SU UBICAZIONE
-
-SELECT *
-FROM articolo
-WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
-                             FROM ubicazione) and articolo.Quantità>0;
-
--- QUERY PER VEDERE GLI ARTICOLI PRESENTI PRESENTI IN DATABSE MA DI CUI QUANTITà =0
-SELECT *
-FROM articolo
-WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
-                             FROM ubicazione);
