@@ -1,25 +1,28 @@
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
-    PesoOccupato FLOAT NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
-    Sezione CHAR(1) NOT NULL,
-    Scaffalatura CHAR(1) NOT NULL,
-    RigaScaff INTEGER NOT NULL,
-    ColonnaScaff INTEGER NOT NULL);
+    PesoOccupato DOUBLE NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
+    Sezione CHAR(1) NOT NULL CHECK (Sezione = 'A' OR Sezione = 'B'),
+    Scaffalatura CHAR(1) NOT NULL CHECK (Scaffalatura = 'a' OR Scaffalatura = 'b'
+                                      OR Scaffalatura = 'c' OR Scaffalatura = 'd'
+                                      OR Scaffalatura = 'e' OR Scaffalatura = 'f'
+                                      OR Scaffalatura = 'g' OR Scaffalatura = 'h'),
+    RigaScaff INTEGER NOT NULL CHECK (RigaScaff >= 1 AND RigaScaff <= 4),
+    ColonnaScaff INTEGER NOT NULL CHECK (ColonnaScaff >= 1 AND ColonnaScaff <= 5));
 
 CREATE TABLE Articolo(
-    Codice VARCHAR(8) PRIMARY KEY,
+    Codice VARCHAR(8) PRIMARY KEY CHECK (LENGTH(Codice) = 8),
     Descrizione VARCHAR(50) NOT NULL,
     Quantità INTEGER NOT NULL,
     Prezzo INTEGER,
-    Altezza FLOAT NOT NULL,
-    Larghezza FLOAT NOT NULL,
-    Profondità FLOAT NOT NULL,
-    Peso FLOAT NOT NULL);
+    Altezza DOUBLE NOT NULL CHECK (Altezza > 0),
+    Larghezza DOUBLE NOT NULL CHECK (Profondità > 0),
+    Profondità DOUBLE NOT NULL CHECK (Profondità > 0),
+    Peso DOUBLE NOT NULL CHECK (Peso > 0));
 
 CREATE TABLE Ubicazione(
     Locazione INTEGER NOT NULL,
     Articolo VARCHAR(8)  NOT NULL,
-    Quantita INTEGER NOT NULL CHECK (Quantita >= 0),
+    Quantita INTEGER NOT NULL CHECK (Quantita > 0),
     UNIQUE(Locazione, Articolo),
     FOREIGN KEY (Locazione) REFERENCES Locazione(CodiceScaffale),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice));
@@ -29,7 +32,7 @@ CREATE TABLE Distinta(
     ArticoloDiRiferimento VARCHAR(8) NOT NULL PRIMARY KEY );
 
 CREATE TABLE DettaglioDistinta(
-    Quantità INTEGER NOT NULL,
+    Quantità INTEGER NOT NULL CHECK (Quantità > 0),
     Articolo VARCHAR (8) NOT NULL,
     Distinta VARCHAR(8) NOT NULL,
     UNIQUE(Articolo, Distinta),
@@ -49,14 +52,14 @@ CREATE TABLE DettaglioCicli(
 CREATE TABLE Commessa(
     CodiceCommessa INTEGER PRIMARY KEY AUTO_INCREMENT,
     DataInizio DATE NOT NULL,
-    DataFine DATE NOT NULL );
+    DataFine DATE NOT NULL CHECK (DataFine >= DataInizio));
 
 CREATE TABLE Ordine(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
     DataOrdine  DATE NOT NULL,
-    Importo INTEGER NOT  NULL,
+    Importo INTEGER NOT NULL CHECK (Importo > 0),
     Codice VARCHAR(8) NOT NULL,
-    Quantità INTEGER NOT NULL);
+    Quantità INTEGER NOT NULL CHECK (Quantità > 0));
 
 CREATE TABLE Fornitore(
     Codice INTEGER AUTO_INCREMENT,
@@ -98,8 +101,8 @@ CREATE TABLE Documento(
     Numero INTEGER PRIMARY KEY AUTO_INCREMENT,
     DatiPagamento VARCHAR(30) NOT NULL,
     DataDocumento DATE NOT NULL,
-    Importo INTEGER NOT NULL,
-    TipoDocumento VARCHAR(10) NOT NULL);
+    Importo INTEGER NOT NULL CHECK (Importo > 0),
+    TipoDocumento VARCHAR(10) NOT NULL CHECK (TipoDocumento = 'DDT' OR TipoDocumento = 'Fattura'));
 
 CREATE TABLE Stipulazione(
     Cliente INTEGER,
@@ -118,10 +121,9 @@ CREATE TABLE Composizione(
     UNIQUE(MacchinaInLavorazione,Articolo),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
     FOREIGN KEY (MacchinaInLavorazione) REFERENCES MacchinaInLavorazione(Matricola),
-    Quantità INTEGER NOT NULL);
+    Quantità INTEGER NOT NULL CHECK (Quantità > 0));
 
 CREATE TABLE Registrazione(
-
     Articolo VARCHAR(8) NOT NULL,
     Fornitore INTEGER,
     Documento INTEGER NOT NULL,
@@ -129,7 +131,7 @@ CREATE TABLE Registrazione(
     FOREIGN KEY (Documento) REFERENCES Documento(Numero),
     FOREIGN KEY (Articolo) REFERENCES Articolo(Codice),
     FOREIGN KEY (Fornitore) REFERENCES Fornitore(Codice),
-    Quantità INTEGER NOT NULL);
+    Quantità INTEGER NOT NULL CHECK (Quantità > 0));
 
 CREATE TABLE Fabbricazione(
     MacchinaInLavorazione INTEGER NOT NULL,
