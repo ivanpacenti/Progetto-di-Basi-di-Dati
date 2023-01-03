@@ -378,7 +378,7 @@ INSERT INTO Ubicazione(Locazione, Articolo, Quantita) VALUES(4, '04543000', 50)
 ON DUPLICATE KEY UPDATE
   Quantita = Quantita + 50;
 DELETE FROM Ubicazione
-WHERE Ubicazione.Quantita = 0 AND Locazione = 3;
+WHERE Ubicazione.Quantita = 0 AND Locazione = 3; -- Questa scrittura viene eseguita solo quando la quantità diventa = 0, cosa che accade di rado
 COMMIT WORK;
 
 /* QUERY 48: Visualizzazione locazione articolo */
@@ -396,16 +396,3 @@ WHERE u.Articolo = '04543000' AND u.Locazione = 3;
 DELETE FROM Ubicazione
 WHERE Ubicazione.Articolo = '04543000' AND Ubicazione.Locazione = 3;
 COMMIT WORK;
-
--- QUERY PER VEDERE GLI ARTICOLI CON QUANTITà CHE NON SONO PRESENTI SU UBICAZIONE
-
-SELECT *
-FROM articolo
-WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
-                             FROM ubicazione) and articolo.Quantità>0;
-
--- QUERY PER VEDERE GLI ARTICOLI PRESENTI PRESENTI IN DATABSE MA DI CUI QUANTITà =0
-SELECT *
-FROM articolo
-WHERE articolo.Codice NOT IN (SELECT Ubicazione.Articolo
-                             FROM ubicazione);
