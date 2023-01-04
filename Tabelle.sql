@@ -1,3 +1,7 @@
+-- Creazioe database
+CREATE DATABASE Messersi;
+USE Messersi;
+
 CREATE TABLE Locazione(
     CodiceScaffale INTEGER PRIMARY KEY AUTO_INCREMENT,
     PesoOccupato DOUBLE NOT NULL CHECK (PesoOccupato >= 0 AND PesoOccupato <= 100),
