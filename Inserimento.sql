@@ -332,10 +332,8 @@ INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES (20,'05990040',2);
 INSERT INTO Ubicazione( Locazione,Articolo, Quantita)
 VALUES (21,'05990040',1);
-INSERT INTO ubicazione(Locazione, Articolo, Quantita)
-VALUE (1,'30156001',10);
-INSERT INTO  ubicazione(Locazione, Articolo, Quantita)
-VALUE(1,'45150898',10);
+
+
 
 /* DOCUMENTO*/
 INSERT INTO documento(DatiPagamento, DataDocumento, Importo, TipoDocumento)
