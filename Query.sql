@@ -289,10 +289,11 @@ FROM Registrazione
 WHERE Documento = 1 OR Documento = 2
 ORDER BY registrazione.Articolo;
 
-/* QUERY 39: Visualizza locazioni vuote */
+/* QUERY 39: Visualizza articoli con quantità positiva, ma senza ubicazione */
 SELECT *
-FROM Locazione
-WHERE PesoOccupato = 0;
+    FROM Articolo
+    WHERE Codice NOT IN (SELECT Articolo
+                         FROM Ubicazione) AND Quantità>0;
 
 -- Operazione 40: Visualizza documenti contenenti un dato articolo e i clienti corrispondenti
 SELECT d.Numero, c.RagioneSociale, c.PartitaIVA, d.DatiPagamento,
